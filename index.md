@@ -17,7 +17,7 @@ I obtained my B.S. degree in Electrical and Computer Engineering from the Techni
 
 ## News
 
-- **[Feb. 2024]** Our paper about attack on LLMs is preprinted on Arcive.
+- **[Feb. 2024]** Our paper about attack on LLMs is preprinted on ArXiv.
 
 <!--
 - **[Feb. 2020]** Our paper about incremental learning is accepted to CVPR 2020.
