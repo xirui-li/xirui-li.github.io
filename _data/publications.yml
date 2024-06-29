@@ -1,17 +1,17 @@
 main:
 
+  - title: "MOSSBench: Is Your Multimodal Language Model Oversensitive to Safe Queries?"
+    authors: <strong>Xirui Li*</strong>, Hengguang Zhou*, Ruochen Wang, Tianyi Zhou, Minhao Cheng, Cho-Jui Hsieh
+    conference_short: Arxiv
+    conference: <strong>(Arxiv)</strong>, 2024.
+    notes: TurningPointAI presents, Under Review
+    page: https://turningpoint-ai.github.io/MOSSBench/
+    pdf: https://arxiv.org/abs/2406.17806
+
   - title: "DrAttack: Prompt Decomposition and Reconstruction Makes Powerful LLM Jailbreakers"
     authors: <strong>Xirui Li</strong>, Ruochen Wang, Minhao Cheng, Tianyi Zhou, Cho-Jui Hsieh
     conference_short: Arxiv
     conference: <strong>(Arxiv)</strong>, 2024.
-    notes: ARC group present, Under Review
+    notes: TurningPointAI presents, Under Review
     page: https://turningpoint-ai.github.io/DrAttack/
-    pdf: https://arxiv.org/abs/2406.17806
-
-  - title: "MOSSBench: Is Your Multimodal Language Model Oversensitive to Safe Queries?"
-    authors: <strong>Xirui Li</strong>, <strong>Hengguang Zhou</strong>, Ruochen Wang, Tianyi Zhou, Minhao Cheng, Cho-Jui Hsieh
-    conference_short: Arxiv
-    conference: <strong>(Arxiv)</strong>, 2024.
-    notes: ARC group present, Under Review
-    page: https://turningpoint-ai.github.io/MOSSBench/
     pdf: https://arxiv.org/abs/2402.16914
