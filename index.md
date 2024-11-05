@@ -17,6 +17,7 @@ I obtained my B.S. degree in Electrical and Computer Engineering from the Techni
 
 ## News
 
+- **[Oct. 2024]** Our paper, DrAttack, about attack on LLMs has been accepted to EMNLP 2024.
 - **[Jul. 2024]** Our paper about oversensitivity of Multimodal-LLMs is preprinted on ArXiv.
 - **[Feb. 2024]** Our paper about attack on LLMs is preprinted on ArXiv.
 
