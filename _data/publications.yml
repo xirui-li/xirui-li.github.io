@@ -10,8 +10,8 @@ main:
 
   - title: "DrAttack: Prompt Decomposition and Reconstruction Makes Powerful LLM Jailbreakers"
     authors: <strong>Xirui Li</strong>, Ruochen Wang, Minhao Cheng, Tianyi Zhou, Cho-Jui Hsieh
-    conference_short: Arxiv
-    conference: <strong>(Arxiv)</strong>, 2024.
-    notes: TurningPointAI presents, Under Review
+    conference_short: EMNLP 2024
+    conference: <strong>EMNLP</strong>, 2024.
+    notes: TurningPointAI presents
     page: https://turningpoint-ai.github.io/DrAttack/
     pdf: https://arxiv.org/abs/2402.16914
