@@ -17,6 +17,8 @@ I obtained my B.S. degree in Electrical and Computer Engineering from the Techni
 
 ## News
 
+- **[Feb. 2025]** We realse our witness of aha moment on 2b models
+- **[Jan. 2025]** Our paper, Mossbench, about oversensitivity of VLMs has been accepted to ICLR 2025! 
 - **[Nov. 2024]** I am actively looking for a PhD student position starting in Fall 2025! 
 - **[Oct. 2024]** Our paper, DrAttack, about attack on LLMs has been accepted to EMNLP 2024.
 - **[Jul. 2024]** Our paper about oversensitivity of Multimodal-LLMs is preprinted on ArXiv.
