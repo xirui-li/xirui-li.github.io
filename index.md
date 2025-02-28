@@ -6,7 +6,7 @@ layout: homepage
 
 I am a pre-doctoral graduate student at UCLA.
 
-I am currently a member of [TurningPointAI](https://turningpoint-ai.com), an AIGC Research Collaboration based off several labs to pursue targeted topics in Multimodal Language Agents, advised by [Ruochen Wang](https://ruocwang.github.io/), Prof. [Cho-Jui Hsieh](https://web.cs.ucla.edu/~chohsieh/). My research currently focuses on Trustworthy AI, especially on controllability and interpretations on foundation models (LLMs/VLMs). Prior to the era of Language Models, I worked on object detection and visual interpretations. Besides research, I am also interested in entrepreneurial opportunities.
+I am currently a member of [TurningPointAI](https://turningpoint-ai.com), an AIGC Research Collaboration based off several labs to pursue targeted topics in Multimodal Language Agents, advised by Dr. [Ruochen Wang](https://ruocwang.github.io/), Prof. [Cho-Jui Hsieh](https://web.cs.ucla.edu/~chohsieh/). My research currently focuses on Trustworthy AI, especially on controllability and interpretations on foundation models (LLMs/VLMs). Prior to the era of Language Models, I worked on object detection and visual interpretations. Besides research, I am also interested in entrepreneurial opportunities.
 
 I obtained my B.S. degree in Electrical and Computer Engineering from the Technical University of Munich. During this period, I did my thesis about Interpretability of Transformer Object Detection at [fortiss](https://www.fortiss.org/) under supervision from Dr. [Shen](https://scholar.google.com.au/citations?user=Kce9W-8AAAAJ&hl=en) and Dr. [Qiu](https://scholar.google.com/citations?user=Ss1kHO8AAAAJ&hl=en).
 
