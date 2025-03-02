@@ -12,8 +12,7 @@ I obtained my B.S. degree in Electrical and Computer Engineering from the Techni
 
 ## Research Interests
 
-- **Computer Vision:** Visual Representation Learning, Engineering and Applications
-- **Language Agents:** Controllability and Interpretations on foundation models (LLMs/VLMs)
+- **Language Agents:** Multimodal Post-Training, Controllability and Interpretations on foundation models (LLMs/VLMs)
 
 ## News
 
