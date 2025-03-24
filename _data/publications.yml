@@ -1,10 +1,11 @@
 main:
   - title: "The Multimodal “Aha Moment” on 2B Model"
     authors: Hengguang Zhou*, <strong>Xirui Li*</strong>, Ruochen Wang, Minhao Cheng, Tianyi Zhou, Cho-Jui Hsieh
-    conference_short: Tech Report
-    conference: <strong>Tech Report</strong>, 2025.
+    conference_short: ArXiv
+    conference: <strong>ArXiv</strong>
     notes: TurningPointAI presents
     page: https://turningpointai.notion.site/the-multimodal-aha-moment-on-2b-model
+    pdf: https://arxiv.org/abs/2503.05132
     
   - title: "MOSSBench: Is Your Multimodal Language Model Oversensitive to Safe Queries?"
     authors: <strong>Xirui Li*</strong>, Hengguang Zhou*, Ruochen Wang, Tianyi Zhou, Minhao Cheng, Cho-Jui Hsieh
