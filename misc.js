@@ -13,7 +13,7 @@ const miscItems = [
     {
         icon: "fas fa-book",
         label: "Reading",
-        description: "I have met outstanding researchers who actively read and inspired me to maintain this hobby — <a href=\"https://ruocwang.github.io/\" target=\"_blank\">Ruochen Wang</a>, <a href=\"https://mingliiii.github.io/\" target=\"_blank\">Ming Li</a>, and <a href=\"https://scholar.google.com/citations?user=Odjg5fEAAAAJ&hl=en\" target=\"_blank\">Siyu Chen</a>. Check out my <a href=\"https://sordid-leek-82f.notion.site/Reading-2fe515a25c4f80efa8f4ce54b93ea6e6?pvs=73\" target=\"_blank\">reading list</a>."
+        description: "I have met outstanding advisors and partners in academic and life who actively read and inspired me to maintain this hobby — <a href=\"https://ruocwang.github.io/\" target=\"_blank\">Ruochen Wang</a>, <a href=\"https://mingliiii.github.io/\" target=\"_blank\">Ming Li</a>, and <a href=\"https://scholar.google.com/citations?user=Odjg5fEAAAAJ&hl=en\" target=\"_blank\">Siyu Chen</a>. Check out my <a href=\"https://sordid-leek-82f.notion.site/Reading-2fe515a25c4f80efa8f4ce54b93ea6e6?pvs=73\" target=\"_blank\">reading list</a>."
     },
     {
         icon: "fas fa-dumbbell",
