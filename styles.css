@@ -674,6 +674,7 @@ body.simple-mode .publication.has-image {
 }
 
 .pub-image {
+    position: relative;
     flex-shrink: 0;
     width: 140px;
     height: 140px;
@@ -693,6 +694,7 @@ body.simple-mode .publication.has-image {
 .pub-image:hover img {
     transform: scale(1.05);
 }
+
 
 .pub-content {
     flex: 1;
