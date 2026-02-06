@@ -19,6 +19,7 @@ const publications = [
     {
         title: "What does RL improve for Visual Reasoning? A Frankenstein-Style Analysis",
         image: "images/IMG_0398.JPG",  // Add your paper thumbnail here
+        altImage: "images/IMG_0398.png",
         authors: [
             { name: "Xirui Li", me: true},
             "Ming Li",
@@ -39,6 +40,7 @@ const publications = [
     {
         title: "R1-Zero's \"Aha Moment\" in Visual Reasoning on a 2B Non-SFT Model",
         image: "images/IMG_0397.JPG",  // Add your paper thumbnail here
+        altImage: "images/IMG_0397.png",
         authors: [
             { name: "Hengguang Zhou", equalContrib: true },
             { name: "Xirui Li", me: true, equalContrib: true },
@@ -62,6 +64,7 @@ const publications = [
     {
         title: "Mossbench: Is your multimodal large language model oversensitive to safe queries?",
         image: "images/IMG_0396.JPG",  // Add your paper thumbnail here
+        altImage: "images/IMG_0396.png",
         authors: [
             { name: "Xirui Li", me: true, equalContrib: true },
             { name: "Hengguang Zhou", equalContrib: true },
@@ -85,6 +88,7 @@ const publications = [
     {
         title: "DrAttack: Prompt decomposition and reconstruction makes powerful LLM jailbreakers",
         image: "images/IMG_0395.JPG",  // Add your paper thumbnail here
+        altImage: "images/IMG_0395.png",
         authors: [
             { name: "Xirui Li", me: true },
             "Ruochen Wang",
@@ -163,9 +167,8 @@ function renderPublication(pub) {
 
     const imageHtml = pub.image
         ? `<div class="pub-image">
-               <a href="${pub.links.paper || pub.links.arxiv || '#'}">
-                   <img src="${pub.image}" alt="${pub.title}">
-               </a>
+               <img src="${pub.image}" alt="${pub.title}"
+                    ${pub.altImage ? `data-alt-image="${pub.altImage}" data-original-image="${pub.image}" onclick="togglePubImage(this)" style="cursor:pointer;"` : ''}>
            </div>`
         : '';
 
@@ -199,6 +202,13 @@ function renderAllPublications() {
     if (!container) return;
 
     container.innerHTML = publications.map(renderPublication).join('\n');
+}
+
+function togglePubImage(img) {
+    const alt = img.getAttribute('data-alt-image');
+    const original = img.getAttribute('data-original-image');
+    if (!alt) return;
+    img.src = img.src.endsWith(alt.split('/').pop()) ? original : alt;
 }
 
 // Initialize when DOM is ready
