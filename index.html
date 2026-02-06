@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xirui Wang | PhD Student @ UMD</title>
+    <meta name="description" content="PhD student at University of Maryland researching multimodal agents, GUI automation, and reinforcement learning.">
+
+    <!-- Fonts (Rusty Lake style: DIN Condensed + Helvetica Neue) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Academicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- ========== Left Sidebar (rendered by sidebar.js) ========== -->
+        <aside id="sidebar" class="sidebar"></aside>
+
+        <!-- ========== Main Content ========== -->
+        <main class="main-content">
+            <!-- About -->
+            <section id="about" class="about">
+                <h2>About Me
+                    <button class="simple-mode-toggle" id="simpleModeToggle" title="Toggle simple mode (hide images)">
+                        <i class="fas fa-image"></i> <span>Simple Mode</span>
+                    </button>
+                </h2>
+                <div class="about-content">
+                    <div class="about-photo" onclick="window.open('images/profile.jpeg', '_blank')">
+                        <img src="images/profile.jpeg" alt="Xirui Li">
+                        <div class="about-photo-overlay">
+                            <button class="about-photo-view-btn">
+                                <i class="fas fa-expand"></i> View
+                            </button>
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <p>
+                            Hi! I am a first-year Ph.D. student in CS at the
+                            <a href="https://www.cs.umd.edu/">UMD</a>,
+                            advised by Prof. <a href="#">Tianyi Zhou</a>.
+                        </p>
+                        <p>
+                            Before starting my Ph.D., I was a master's student at
+                            <a href="https://www.ucla.edu/">UCLA</a>.
+                            I am a member of
+                            <a href="https://turningpointai.org/">TurningPointAI</a>,
+                            where I worked under the guidance of
+                            Dr. <a href="https://ruocwang.github.io/">Ruochen Wang</a> and
+                            Prof. <a href="https://web.cs.ucla.edu/~chohsieh/">Cho-Jui Hsieh</a>.
+                            I obtained my B.S. degree from
+                            <a href="https://www.tum.de/">TUM</a>,
+                            under the supervision of
+                            Dr. <a href="https://scholar.google.com/citations?user=Kce9W-8AAAAJ&hl=en">Shen</a> and
+                            Dr. <a href="https://scholar.google.com/citations?user=Ss1kHO8AAAAJ&hl=en">Qiu</a>.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research Interests -->
+            <section id="research" class="research">
+                <h2>Research Interests</h2>
+                <p>
+                    I am someone who likes to understand what models actually learn, rather than just whether they work.
+                    I am curious about how vision & language and understanding & generation come together inside a model, and why some forms of learning lead to reasoning and generalization while others do not.
+                </p>
+                <p> 
+                    My work spans multimodal understanding as well as image and video generation. Instead of treating these as separate problems, I see them as different views of the same question: how learning across modalities shapes internal representations.
+                </p>
+                <!-- Tags rendered by tags.js -->
+                <div class="research-tags"></div>
+                <p class="filter-hint">
+                    Click on a tag to filter publications
+                    <button class="clear-filter" id="clearFilter">Clear</button>
+                </p>
+            </section>
+
+            <!-- News (rendered by news.js) -->
+            <section id="news">
+                <h2>News</h2>
+                <ul class="news-list" id="newsList"></ul>
+                <button class="news-toggle" id="newsToggle" style="display: none;">
+                    <span class="toggle-text">Show more</span>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+            </section>
+
+            <!-- Publications -->
+            <section id="publications">
+                <h2>Publications</h2>
+                <!-- Filter tags (rendered by tags.js, synced with Research Interests) -->
+                <div class="pub-filter">
+                    <div class="research-tags"></div>
+                    <button class="clear-filter" id="clearFilterPub">Clear</button>
+                </div>
+                <p style="margin-bottom: 1rem; color: var(--text-light); font-size: 0.9rem;">
+                    (* indicates equal contribution) | <a href="https://scholar.google.com/citations?user=7hH0iM8AAAAJ&hl=en" target="_blank">Google Scholar</a>
+                </p>
+
+                <!-- Publications will be rendered here by publications.js -->
+                <div id="publications-list"></div>
+            </section>
+
+            <!-- Education (rendered by education.js) -->
+            <section id="education">
+                <h2>Education</h2>
+                <div id="education-list"></div>
+            </section>
+
+            <!-- Experience (rendered by experience.js) -->
+            <section id="experience">
+                <h2>Experience</h2>
+                <div id="experience-list"></div>
+            </section>
+
+            <!-- Misc (rendered by misc.js) -->
+            <section id="misc">
+                <h2>Misc</h2>
+                <div id="misc-list"></div>
+            </section>
+
+            <!-- Footer -->
+            <footer>
+                <p>&copy; 2026 Xirui Li &middot; Last updated: February 2026</p>
+                <p style="margin-top: 0.3rem;">
+                    Template inspired by <a href="https://mars-tin.github.io/">Martin Ma</a>
+                </p>
+                <p style="margin-top: 0.3rem;">
+                    Wallpaper is a style from <a href="https://www.rustylake.com/">Rusty Lake</a> and hand-drawn by <a href="https://xhslink.com/m/54HQ2Od65Rs" target="_blank">@吱吱啵啵</a> on 小红书
+                </p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Sidebar -->
+    <script src="sidebar.js"></script>
+
+    <!-- Section Data -->
+    <script src="tags.js"></script>
+    <script src="news.js"></script>
+    <script src="education.js"></script>
+    <script src="experience.js"></script>
+    <script src="publications.js"></script>
+    <script src="misc.js"></script>
+
+    <!-- UI Interactions -->
+    <script src="filter.js"></script>
+</body>
+</html>
