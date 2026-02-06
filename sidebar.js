@@ -31,7 +31,7 @@ const sidebarConfig = {
         { icon: "fab fa-github", url: "https://github.com/xirui-li", title: "GitHub" },
         { icon: "fab fa-twitter", url: "https://twitter.com/xiruili7_li", title: "Twitter" },
         { icon: "fab fa-linkedin-in", url: "https://www.linkedin.com/in/xirui-li7/", title: "LinkedIn" },
-        { icon: "fas fa-file-pdf", url: "files/cv.pdf", title: "CV" },
+        { icon: "fas fa-file-pdf", url: "https://github.com/xirui-li/xirui-li.github.io/blob/main/files/CV.pdf", title: "CV" },
         { icon: "fas fa-calendar", url: "https://calendly.com/xiruili-umd/30min", title: "Schedule Meeting" }
     ],
 
