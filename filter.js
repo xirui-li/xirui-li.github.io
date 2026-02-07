@@ -95,6 +95,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // ========== Auto-enable Simple Mode on mobile ==========
+    if (window.innerWidth <= 900 && simpleModeToggle) {
+        simpleModeToggle.classList.add('active');
+        document.body.classList.add('simple-mode');
+        disableBackground();
+    }
+
     // ========== Scroll Spy for Navigation ==========
     const navLinks = document.querySelectorAll('.sidebar-nav a');
     const sections = [];
