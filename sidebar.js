@@ -138,5 +138,29 @@ function toggleProfilePhoto() {
         : sidebarConfig.profile.photo;
 }
 
+// Preload sidebar images to avoid white flash on first switch
+function preloadSidebarImages() {
+    const urls = [];
+
+    // Nav background images
+    sidebarConfig.nav.forEach(item => {
+        if (item.backgroundImage) urls.push(item.backgroundImage);
+    });
+
+    // Default background
+    if (sidebarConfig.defaultBackground) urls.push(sidebarConfig.defaultBackground);
+
+    // Alt profile photo
+    if (sidebarConfig.profile.altPhoto) urls.push(sidebarConfig.profile.altPhoto);
+
+    urls.forEach(url => {
+        const img = new Image();
+        img.src = url;
+    });
+}
+
 // Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', renderSidebar);
+document.addEventListener('DOMContentLoaded', () => {
+    renderSidebar();
+    preloadSidebarImages();
+});

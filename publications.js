@@ -211,5 +211,18 @@ function togglePubImage(img) {
     img.src = img.src.endsWith(alt.split('/').pop()) ? original : alt;
 }
 
+// Preload alt publication images to avoid white flash on first toggle
+function preloadPubImages() {
+    publications.forEach(pub => {
+        if (pub.altImage) {
+            const img = new Image();
+            img.src = pub.altImage;
+        }
+    });
+}
+
 // Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', renderAllPublications);
+document.addEventListener('DOMContentLoaded', () => {
+    renderAllPublications();
+    preloadPubImages();
+});
