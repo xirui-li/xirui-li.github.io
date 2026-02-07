@@ -881,7 +881,8 @@ footer {
         flex-direction: column;
     }
 
-    .sidebar {
+    .sidebar,
+    .sidebar.has-bg-image {
         position: relative;
         width: 100%;
         height: auto;
