@@ -888,6 +888,8 @@ footer {
         height: auto;
         border-right: none;
         border-bottom: 1px solid var(--border-color);
+        z-index: 1;
+        overflow: hidden;
     }
 
     .main-content {
