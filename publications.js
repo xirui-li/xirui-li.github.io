@@ -29,12 +29,11 @@ const publications = [
         venueShort: "ArXiv",
         year: 2026,
         // award: "600+ Github Stars",
-        tags: ["rlvr", "vlm", "reasoning"],
+        tags: ["rlvr", "vlm", "reasoning", "training dynamics"],
         links: {
             paper: "https://arxiv.org/pdf/2503.05132",
             arxiv: "https://arxiv.org/abs/2503.05132",
-            code: "https://github.com/turningpoint-ai/VisualThinker-R1-Zero",
-            project: "https://turningpointai.notion.site/the-multimodal-aha-moment-on-2b-model",
+            code: "https://github.com/tianyi-lab/Frankenstein",
         }
     },
     {

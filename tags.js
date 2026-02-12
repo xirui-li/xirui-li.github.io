@@ -15,10 +15,11 @@
 const researchTags = [
     { id: "rlvr", label: "RLVR" },
     { id: "reasoning", label: "Reasoning" },
-    { id: "safety", label: "Safety Alignment" },
+    { id: "safety", label: "Safety" },
     { id: "vlm", label: "VLM" },
     { id: "llm", label: "LLM" },
     { id: "agent", label: "Agents" },
+    { id: "training dynamics", label: "Training Dynamics" },
     // Add more tags here, e.g.:
     // { id: "safety", label: "AI Safety" },
     // { id: "generation", label: "Image/Video Generation" },
