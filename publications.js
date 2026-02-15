@@ -14,8 +14,27 @@
  *   - tags: Array of research area tags (should match tags in index.html)
  *   - links: Object with link types as keys (paper, arxiv, code, project, demo, video, slides)
  */
-
 const publications = [
+    {
+        title: "Does Socialization Emerge in AI Agent Society? A Case Study of Moltbook",
+        image: "images/IMG_0399.JPG",  // Add your paper thumbnail here
+        altImage: "images/IMG_0399.png",
+        authors: [
+            { name: "Ming Li", equalContrib: true },
+            { name: "Xirui Li", equalContrib: true, me: true},
+            "Tianyi Zhou",
+        ],
+        venue: "ArXiv Preprint",
+        venueShort: "ArXiv",
+        year: 2026,
+        // award: "600+ Github Stars",
+        tags: ["llm", "agents"],
+        links: {
+            paper: "https://arxiv.org/pdf/2503.05132",
+            arxiv: "https://arxiv.org/abs/2503.05132",
+            code: "https://github.com/tianyi-lab/Frankenstein",
+        }
+    },
     {
         title: "What does RL improve for Visual Reasoning? A Frankenstein-Style Analysis",
         image: "images/IMG_0398.JPG",  // Add your paper thumbnail here
@@ -76,7 +95,7 @@ const publications = [
         venueShort: "ICLR",
         year: 2025,
         // award: "Spotlight",
-        tags: ["vlm", "safety"],
+        tags: ["vlm", "trustworthy"],
         links: {
             paper: "https://arxiv.org/pdf/2406.17806",
             arxiv: "https://arxiv.org/abs/2406.17806",
@@ -98,7 +117,7 @@ const publications = [
         venue: "Empirical Methods in Natural Language Processing",
         venueShort: "EMNLP",
         year: 2024,
-        tags: ["llm", "safety"],
+        tags: ["llm", "trustworthy"],
         links: {
             paper: "https://arxiv.org/pdf/2402.16914",
             arxiv: "https://arxiv.org/abs/2402.16914",

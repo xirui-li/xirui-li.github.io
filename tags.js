@@ -15,7 +15,7 @@
 const researchTags = [
     { id: "rlvr", label: "RLVR" },
     { id: "reasoning", label: "Reasoning" },
-    { id: "safety", label: "Safety" },
+    { id: "trustworthy", label: "Trustworthy" },
     { id: "vlm", label: "VLM" },
     { id: "llm", label: "LLM" },
     { id: "agent", label: "Agents" },
