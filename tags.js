@@ -18,7 +18,7 @@ const researchTags = [
     { id: "trustworthy", label: "Trustworthy" },
     { id: "vlm", label: "VLM" },
     { id: "llm", label: "LLM" },
-    { id: "agent", label: "Agents" },
+    { id: "agents", label: "Agents" },
     { id: "training dynamics", label: "Training Dynamics" },
     // Add more tags here, e.g.:
     // { id: "safety", label: "AI Safety" },
