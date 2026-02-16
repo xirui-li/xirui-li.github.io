@@ -50,8 +50,8 @@ const publications = [
         // award: "600+ Github Stars",
         tags: ["rlvr", "vlm", "reasoning", "training dynamics"],
         links: {
-            paper: "https://arxiv.org/pdf/2503.05132",
-            arxiv: "https://arxiv.org/abs/2503.05132",
+            paper: "https://arxiv.org/pdf/2602.12395",
+            arxiv: "https://arxiv.org/abs/2602.12395",
             code: "https://github.com/tianyi-lab/Frankenstein",
         }
     },
