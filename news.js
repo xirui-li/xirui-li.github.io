@@ -12,6 +12,10 @@
 const newsItems = [
     {
         date: "Feb 2026",
+        content: "Our paper about socialization of largest AI agent society is preprinted on ArXiv."
+    },
+    {
+        date: "Feb 2026",
         content: "Our paper about analyzing consistent improvements across RLVR on VLMs is preprinted on ArXiv."
     },
     {
