@@ -30,9 +30,9 @@ const publications = [
         // award: "600+ Github Stars",
         tags: ["llm", "agents"],
         links: {
-            paper: "https://arxiv.org/pdf/2503.05132",
-            arxiv: "https://arxiv.org/abs/2503.05132",
-            code: "https://github.com/tianyi-lab/Frankenstein",
+            paper: "https://arxiv.org/pdf/2602.14299",
+            arxiv: "https://arxiv.org/abs/2602.14299",
+            code: "https://github.com/MingLiiii/Moltbook_Socialization",
         }
     },
     {
