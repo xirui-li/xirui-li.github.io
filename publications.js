@@ -32,7 +32,7 @@ const publications = [
         links: {
             paper: "https://arxiv.org/pdf/2602.14299",
             arxiv: "https://arxiv.org/abs/2602.14299",
-            code: "https://github.com/MingLiiii/Moltbook_Socializationa",
+            code: "https://github.com/MingLiiii/Moltbook_Socialization",
         }
     },
     {
