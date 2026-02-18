@@ -744,6 +744,7 @@ body.simple-mode .publication.has-image {
     color: var(--accent-color);
     font-weight: 600;
     font-style: normal;
+    margin-left: 0.5rem;
 }
 
 .pub-links {
