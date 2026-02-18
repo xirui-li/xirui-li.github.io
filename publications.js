@@ -27,7 +27,8 @@ const publications = [
         venue: "ArXiv Preprint",
         venueShort: "ArXiv",
         year: 2026,
-        // award: "600+ Github Stars",
+        award: "#3 Paper of the day",
+        awardLink: "https://huggingface.co/papers/2602.14299",
         tags: ["llm", "agents"],
         links: {
             paper: "https://arxiv.org/pdf/2602.14299",
@@ -180,7 +181,7 @@ function renderPublication(pub) {
         : `${pub.venue}, ${pub.year}`;
 
     const awardHtml = pub.award
-        ? `<span class="award">🏆 ${pub.award}</span>`
+        ? `<span class="award">🏆 ${pub.awardLink ? `<a href="${pub.awardLink}" target="_blank">${pub.award}</a>` : pub.award}</span>`
         : '';
 
     const imageHtml = pub.image
