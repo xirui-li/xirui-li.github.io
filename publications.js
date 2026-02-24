@@ -27,7 +27,7 @@ const publications = [
         venue: "ArXiv Preprint",
         venueShort: "ArXiv",
         year: 2026,
-        award: "#3 Paper of the day",
+        // award: "#3 Paper of the day",
         awardLink: "https://huggingface.co/papers/2602.14299",
         tags: ["llm", "agents"],
         links: {
