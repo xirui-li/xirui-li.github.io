@@ -42,7 +42,7 @@ function renderExperience() {
             : '';
 
         return `
-            <div class="timeline-item">
+            <div class="timeline-item reveal-item">
                 <span class="timeline-date">${item.dates}</span>
                 <div class="timeline-content">
                     <h3>${item.title} @ ${item.company}</h3>

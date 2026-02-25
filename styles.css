@@ -1203,6 +1203,18 @@ footer {
     animation: fadeInUp 0.5s ease-out forwards;
 }
 
+/* Per-item reveal on scroll */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.reveal-item.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Award link style */
 .pub-venue .award a {
     color: inherit;

@@ -56,7 +56,7 @@ function renderNews() {
     if (!container) return;
 
     const html = newsItems.map(item => `
-        <li class="news-item">
+        <li class="news-item reveal-item">
             <span class="news-date">[${item.date}]</span>
             <span class="news-content">${item.content}</span>
         </li>

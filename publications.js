@@ -192,7 +192,7 @@ function renderPublication(pub) {
         : '';
 
     return `
-        <div class="publication ${pub.image ? 'has-image' : ''}" data-tags="${pub.tags.join(',')}">
+        <div class="publication reveal-item ${pub.image ? 'has-image' : ''}" data-tags="${pub.tags.join(',')}">
             ${imageHtml}
             <div class="pub-content">
                 <div class="pub-title">

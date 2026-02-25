@@ -65,7 +65,7 @@ function renderMisc() {
         }
 
         return `
-            <div class="misc-item">
+            <div class="misc-item reveal-item">
                 <i class="${item.icon} misc-icon"></i>
                 <div class="misc-text">
                     <span class="misc-label">${item.label}</span>

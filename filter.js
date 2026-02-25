@@ -325,4 +325,21 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.main-content section').forEach(section => {
         revealObserver.observe(section);
     });
+
+    // ========== Per-item Reveal on Scroll ==========
+    const itemObserver = new IntersectionObserver((entries) => {
+        const visible = entries.filter(e => e.isIntersecting);
+        visible.forEach((entry, i) => {
+            entry.target.style.transitionDelay = `${i * 0.08}s`;
+            entry.target.classList.add('revealed');
+            itemObserver.unobserve(entry.target);
+        });
+    }, { threshold: 0.05 });
+
+    // Observe items after a short delay to let JS render them
+    setTimeout(() => {
+        document.querySelectorAll('.reveal-item').forEach(item => {
+            itemObserver.observe(item);
+        });
+    }, 50);
 });
