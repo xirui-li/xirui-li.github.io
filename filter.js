@@ -310,4 +310,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+    // ========== Scroll Reveal for Sections ==========
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationDelay = `${i * 0.05}s`;
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.main-content section').forEach(section => {
+        revealObserver.observe(section);
+    });
 });
