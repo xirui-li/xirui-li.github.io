@@ -68,8 +68,8 @@ const publications = [
             "Tianyi Zhou",
             "Cho-Jui Hsieh"
         ],
-        venue: "ArXiv Preprint",
-        venueShort: "ArXiv",
+        venue: "ICLR 2026 Workshop ES-Reason",
+        venueShort: "ICLR 2026 WS",
         year: 2025,
         award: "600+ Github Stars",
         tags: ["rlvr", "vlm", "reasoning"],
