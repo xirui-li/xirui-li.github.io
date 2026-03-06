@@ -16,6 +16,30 @@
  */
 const publications = [
     {
+        title: "Superminds Test: Actively Evaluating Collective Intelligence of Agent Society via Probing Agents",
+        image: "images/IMG_0400.JPG",  // Add your paper thumbnail here
+        altImage: "images/IMG_0400.png",
+        authors: [
+            { name: "Xirui Li", equalContrib: true, me: true},
+            { name: "Ming Li", equalContrib: true},
+            "Ryan Wang",
+            "Dianqi Li",
+            "Tianyi Zhou",
+        ],
+        venue: "ArXiv Preprint",
+        venueShort: "ArXiv",
+        year: 2026,
+        // award: "#3 Paper of the day",
+        awardLink: "https://huggingface.co/papers/2602.14299",
+        tags: ["llm", "agents"],
+        links: {
+            paper: "https://arxiv.org/pdf/2602.14299",
+            arxiv: "https://arxiv.org/abs/2602.14299",
+            code: "https://github.com/xirui-li/MoltBook-Evaluation",
+            project: "https://ai-agent-society.com",
+        }
+    },
+    {
         title: "Does Socialization Emerge in AI Agent Society? A Case Study of Moltbook",
         image: "images/IMG_0399.JPG",  // Add your paper thumbnail here
         altImage: "images/IMG_0399.png",
@@ -34,6 +58,7 @@ const publications = [
             paper: "https://arxiv.org/pdf/2602.14299",
             arxiv: "https://arxiv.org/abs/2602.14299",
             code: "https://github.com/MingLiiii/Moltbook_Socialization",
+            project: "https://ai-agent-society.com",
         }
     },
     {
@@ -70,7 +95,7 @@ const publications = [
         ],
         venue: "ICLR 2026 Workshop ES-Reason",
         venueShort: "ICLR 2026 WS",
-        year: 2025,
+        year: 2026,
         award: "600+ Github Stars",
         tags: ["rlvr", "vlm", "reasoning"],
         links: {
