@@ -11,6 +11,14 @@
 
 const newsItems = [
     {
+        date: "Mar 2026",
+        content: "I created a live war forecasting platform: <a href=\"https://war-forecast-arena.com/\" target=\"_blank\">War Forecast Arena</a>."
+    },
+    {
+        date: "Mar 2026",
+        content: "Our latest paper <strong>SuperMinds</strong> about evaluating collective intelligence of agent society is preprinted on ArXiv."
+    },
+    {
         date: "Feb 2026",
         content: "Our paper about socialization of largest AI agent society is preprinted on ArXiv."
     },
