@@ -31,9 +31,9 @@ const publications = [
         awardLink: "https://huggingface.co/papers/2602.14299",
         tags: ["llm", "agents", "reasoning"],
         links: {
-            paper: "https://arxiv.org/pdf/2602.14299",
-            arxiv: "https://arxiv.org/abs/2602.14299",
-            code: "https://github.com/xirui-li/MoltBook-Evaluation",
+            paper: "https://arxiv.org/pdf/2603.16642",
+            arxiv: "https://arxiv.org/abs/2603.16642",
+            code: "https://github.com/xirui-li/war-test",
             project: "https://war-forecast-arena.com",
         }
     },
