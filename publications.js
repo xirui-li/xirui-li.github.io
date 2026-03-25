@@ -44,6 +44,7 @@ const publications = [
         authors: [
             { name: "Xirui Li", equalContrib: true, me: true},
             { name: "Ming Li", equalContrib: true},
+            "Yunze Xiao",
             "Ryan Wang",
             "Dianqi Li",
             "Tianyi Zhou",
