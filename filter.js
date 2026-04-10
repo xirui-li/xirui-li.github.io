@@ -95,8 +95,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ========== Auto-enable Simple Mode on mobile ==========
-    if (window.innerWidth <= 900 && simpleModeToggle) {
+    // ========== Auto-enable Simple Mode by default ==========
+    if (simpleModeToggle) {
         simpleModeToggle.classList.add('active');
         document.body.classList.add('simple-mode');
         disableBackground();
