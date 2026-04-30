@@ -15,6 +15,30 @@
  *   - links: Object with link types as keys (paper, arxiv, code, project, demo, video, slides)
  */
 const publications = [
+        {
+        title: "ClawEnvKit: Automatic Environment Generation for Claw-Like Agents",
+        image: "images/IMG_0402.JPG",  // Add your paper thumbnail here
+        altImage: "images/IMG_0402.png",
+        authors: [
+            "Xirui Li",
+            "Ming Li",
+            "Ion Stoica",
+            "Cho-Jui Hsieh",
+            "Tianyi Zhou",
+        ],
+        venue: "ArXiv Preprint",
+        venueShort: "ArXiv",
+        year: 2026,
+        // award: "#3 Paper of the day",
+        awardLink: "https://huggingface.co/papers/2604.18543",
+        tags: ["llm", "agents"],
+        links: {
+            paper: "https://arxiv.org/pdf/2604.18543",
+            arxiv: "https://arxiv.org/abs/2604.18543",
+            code: "https://github.com/xirui-li/ClawEnvKit",
+            project: "https://github.com/xirui-li/ClawEnvKit",
+        }
+    },
     {
         title: "When AI Navigates the Fog of War",
         image: "images/IMG_0401.JPG",  // Add your paper thumbnail here
@@ -56,8 +80,8 @@ const publications = [
         awardLink: "https://huggingface.co/papers/2602.14299",
         tags: ["llm", "agents"],
         links: {
-            paper: "https://arxiv.org/pdf/2602.14299",
-            arxiv: "https://arxiv.org/abs/2602.14299",
+            paper: "https://arxiv.org/pdf/2604.22452",
+            arxiv: "https://arxiv.org/abs/2604.22452",
             code: "https://github.com/xirui-li/MoltBook-Evaluation",
             project: "https://ai-agent-society.com",
         }
@@ -71,8 +95,8 @@ const publications = [
             { name: "Xirui Li", equalContrib: true, me: true},
             "Tianyi Zhou",
         ],
-        venue: "ArXiv Preprint",
-        venueShort: "ArXiv",
+        venue: "ACM Conference on AI and Agentic Systems",
+        venueShort: "ACM CAIS 2026",
         year: 2026,
         // award: "#3 Paper of the day",
         awardLink: "https://huggingface.co/papers/2602.14299",

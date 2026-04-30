@@ -11,16 +11,28 @@
 
 const newsItems = [
     {
+        date: "Apr 2026",
+        content: "Our latest paper <strong>ClawEnvKit</strong> on automatic environment generation for claw-like agents is preprinted on ArXiv."
+    },
+    {
+        date: "Apr 2026",
+        content: "Our paper <strong>Moltbook-Soc</strong> has been accepted to <strong>ACM CAIS 2026</strong>!"
+    },
+    {
+        date: "Mar 2026",
+        content: "Our paper <strong>SuperMinds</strong> about evaluating collective intelligence of agent society is preprinted on ArXiv."
+    },
+    {
         date: "Mar 2026",
         content: "I created a live war forecasting platform: <a href=\"https://war-forecast-arena.com/\" target=\"_blank\">War Forecast Arena</a>."
     },
     {
         date: "Mar 2026",
-        content: "Our latest paper <strong>SuperMinds</strong> about evaluating collective intelligence of agent society is preprinted on ArXiv."
+        content: "Our paper <strong>When AI Navigates the Fog of War</strong> on AI-driven war forecasting is preprinted on ArXiv."
     },
     {
         date: "Feb 2026",
-        content: "Our paper about socialization of largest AI agent society is preprinted on ArXiv."
+        content: "Our paper <strong>Moltbook-Soc</strong> about socialization of largest AI agent society is preprinted on ArXiv."
     },
     {
         date: "Feb 2026",
