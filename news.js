@@ -11,6 +11,14 @@
 
 const newsItems = [
     {
+        date: "Jun 2026",
+        content: "I joined the <img src=\"images/aws_logo.svg\" alt=\"AWS\" class=\"news-logo\"> <strong>AgentCore</strong> team in NYC for a summer internship!"
+    },
+    {
+        date: "Jun 2026",
+        content: "Our paper <strong>Guava</strong> on an effective and universal harness for embodied manipulation is preprinted on ArXiv."
+    },
+    {
         date: "Apr 2026",
         content: "Our latest paper <strong>ClawEnvKit</strong> on automatic environment generation for claw-like agents is preprinted on ArXiv."
     },

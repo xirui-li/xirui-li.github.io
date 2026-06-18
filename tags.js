@@ -13,6 +13,7 @@
  */
 
 const researchTags = [
+    { id: "embodied", label: "Embodied" },
     { id: "rlvr", label: "RLVR" },
     { id: "reasoning", label: "Reasoning" },
     { id: "trustworthy", label: "Trustworthy" },

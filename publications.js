@@ -15,6 +15,30 @@
  *   - links: Object with link types as keys (paper, arxiv, code, project, demo, video, slides)
  */
 const publications = [
+    {
+        title: "Guava: An Effective and Universal Harness for Embodied Manipulation",
+        image: "images/IMG_0403.JPG",
+        altImage: "images/IMG_0403.png",
+        authors: [
+            { name: "Haowen Liu", equalContrib: true },
+            { name: "Xirui Li", equalContrib: true, me: true },
+            "Shaoxiong Yao",
+            "Peng Shi",
+            "Tianyi Zhou",
+            "Jia-Bin Huang",
+            "Furong Huang",
+            "Jiayuan Mao",
+        ],
+        venue: "ArXiv Preprint",
+        venueShort: "ArXiv",
+        year: 2026,
+        tags: ["embodied", "agents", "vlm", "llm"],
+        links: {
+            paper: "https://arxiv.org/pdf/2606.18363",
+            arxiv: "https://arxiv.org/abs/2606.18363",
+            project: "https://guava-harness.github.io/",
+        }
+    },
         {
         title: "ClawEnvKit: Automatic Environment Generation for Claw-Like Agents",
         image: "images/IMG_0402.JPG",  // Add your paper thumbnail here
