@@ -13,9 +13,18 @@
 
 const experienceItems = [
     {
+        dates: "Jun 2026 - Now",
+        title: "Applied Research Intern",
+        company: "AWS",
+        logo: "images/aws_logo.svg",
+        description: "Working on agents.",
+        details: []
+    },
+    {
         dates: "Aug 2024 - Aug 2025",
         title: "Research Assistant",
         company: "UCLA",
+        logo: "images/ucla_logo.png",
         description: "Worked on multimodal learning.",
         details: []
     },
@@ -23,6 +32,7 @@ const experienceItems = [
         dates: "Jul 2023 - Sep 2023",
         title: "Software Engineer Intern",
         company: "Mathworks",
+        logo: "images/mathworks_logo.png",
         description: "Worked on hardware description language for code generation.",
         details: []
     }
@@ -40,12 +50,15 @@ function renderExperience() {
         const detailsHtml = item.details && item.details.length > 0
             ? `<ul>${item.details.map(d => `<li>${d}</li>`).join('')}</ul>`
             : '';
+        const logoHtml = item.logo
+            ? `<img src="${item.logo}" alt="${item.company}" class="experience-logo">`
+            : '';
 
         return `
             <div class="timeline-item reveal-item">
                 <span class="timeline-date">${item.dates}</span>
                 <div class="timeline-content">
-                    <h3>${item.title} @ ${item.company}</h3>
+                    <h3>${item.title} @ ${logoHtml}${item.company}</h3>
                     ${descHtml}
                     ${detailsHtml}
                 </div>
