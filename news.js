@@ -11,6 +11,10 @@
 
 const newsItems = [
     {
+        date: "Jul 2026",
+        content: "Our paper <strong>Frankenstein</strong> on analyzing what RL improves for visual reasoning has been accepted to <strong>COLM 2026</strong>!"
+    },
+    {
         date: "Jun 2026",
         content: "I joined the <img src=\"images/aws_logo.svg\" alt=\"AWS\" class=\"news-logo\"> <strong>AgentCore</strong> team in NYC for a summer internship!"
     },
