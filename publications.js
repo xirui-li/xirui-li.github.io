@@ -63,28 +63,28 @@ const publications = [
             project: "https://github.com/xirui-li/ClawEnvKit",
         }
     },
-    {
-        title: "When AI Navigates the Fog of War",
-        image: "images/IMG_0401.JPG",  // Add your paper thumbnail here
-        altImage: "images/IMG_0401.png",
-        authors: [
-            { name: "Ming Li", equalContrib: true},
-            { name: "Xirui Li", equalContrib: true, me: true},
-            "Tianyi Zhou",
-        ],
-        venue: "ArXiv Preprint",
-        venueShort: "ArXiv",
-        year: 2026,
-        // award: "#3 Paper of the day",
-        awardLink: "https://huggingface.co/papers/2602.14299",
-        tags: ["llm", "agents", "reasoning"],
-        links: {
-            paper: "https://arxiv.org/pdf/2603.16642",
-            arxiv: "https://arxiv.org/abs/2603.16642",
-            code: "https://github.com/xirui-li/war-test",
-            project: "https://war-forecast-arena.com",
-        }
-    },
+    // {
+    //     title: "When AI Navigates the Fog of War",
+    //     image: "images/IMG_0401.JPG",  // Add your paper thumbnail here
+    //     altImage: "images/IMG_0401.png",
+    //     authors: [
+    //         { name: "Ming Li", equalContrib: true},
+    //         { name: "Xirui Li", equalContrib: true, me: true},
+    //         "Tianyi Zhou",
+    //     ],
+    //     venue: "ArXiv Preprint",
+    //     venueShort: "ArXiv",
+    //     year: 2026,
+    //     // award: "#3 Paper of the day",
+    //     awardLink: "https://huggingface.co/papers/2602.14299",
+    //     tags: ["llm", "agents", "reasoning"],
+    //     links: {
+    //         paper: "https://arxiv.org/pdf/2603.16642",
+    //         arxiv: "https://arxiv.org/abs/2603.16642",
+    //         code: "https://github.com/xirui-li/war-test",
+    //         project: "https://war-forecast-arena.com",
+    //     }
+    // },
     {
         title: "Superminds Test: Actively Evaluating Collective Intelligence of Agent Society via Probing Agents",
         image: "images/IMG_0400.JPG",  // Add your paper thumbnail here
