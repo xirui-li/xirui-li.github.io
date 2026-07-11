@@ -322,7 +322,7 @@ a:hover {
     flex: 1;
     margin-left: var(--sidebar-width);
     padding: 2rem 3rem;
-    max-width: 900px;
+    max-width: 1300px;
 }
 
 section {
