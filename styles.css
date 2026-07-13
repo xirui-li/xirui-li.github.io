@@ -790,7 +790,7 @@ body.simple-mode .publication.has-image {
 
 .timeline-date {
     flex-shrink: 0;
-    width: 120px;
+    width: 170px;
     font-size: 0.9rem;
     color: var(--text-light);
     font-weight: 600;
