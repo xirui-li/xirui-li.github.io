@@ -12,7 +12,7 @@
 const newsItems = [
     {
         date: "Jul 2026",
-        content: "Our paper <strong>Frankenstein</strong> on analyzing what RL improves for visual reasoning has been accepted to <strong>COLM 2026</strong>!"
+        content: "Our paper <a href=\"https://arxiv.org/abs/2602.12395\" target=\"_blank\"><strong>Frankenstein</strong></a> on analyzing what RL improves for visual reasoning has been accepted to <strong>COLM 2026</strong>!"
     },
     {
         date: "Jun 2026",
@@ -20,19 +20,19 @@ const newsItems = [
     },
     {
         date: "Jun 2026",
-        content: "Our paper <strong>Guava</strong> on an effective and universal harness for embodied manipulation is preprinted on ArXiv."
+        content: "Our paper <a href=\"https://arxiv.org/abs/2606.18363\" target=\"_blank\"><strong>Guava</strong></a> on an effective and universal harness for embodied manipulation is preprinted on ArXiv."
     },
     {
         date: "Apr 2026",
-        content: "Our latest paper <strong>ClawEnvKit</strong> on automatic environment generation for claw-like agents is preprinted on ArXiv."
+        content: "Our latest paper <a href=\"https://arxiv.org/abs/2604.18543\" target=\"_blank\"><strong>ClawEnvKit</strong></a> on automatic environment generation for claw-like agents is preprinted on ArXiv."
     },
     {
         date: "Apr 2026",
-        content: "Our paper <strong>Moltbook-Soc</strong> has been accepted to <strong>ACM CAIS 2026</strong>!"
+        content: "Our paper <a href=\"https://arxiv.org/abs/2602.14299\" target=\"_blank\"><strong>Moltbook-Soc</strong></a> has been accepted to <strong>ACM CAIS 2026</strong>!"
     },
     {
         date: "Mar 2026",
-        content: "Our paper <strong>SuperMinds</strong> about evaluating collective intelligence of agent society is preprinted on ArXiv."
+        content: "Our paper <a href=\"https://arxiv.org/abs/2604.22452\" target=\"_blank\"><strong>SuperMinds</strong></a> about evaluating collective intelligence of agent society is preprinted on ArXiv."
     },
     {
         date: "Mar 2026",
@@ -44,23 +44,23 @@ const newsItems = [
     },
     {
         date: "Feb 2026",
-        content: "Our paper <strong>Moltbook-Soc</strong> about socialization of largest AI agent society is preprinted on ArXiv."
+        content: "Our paper <a href=\"https://arxiv.org/abs/2602.14299\" target=\"_blank\"><strong>Moltbook-Soc</strong></a> about socialization of largest AI agent society is preprinted on ArXiv."
     },
     {
         date: "Feb 2026",
-        content: "Our paper about analyzing consistent improvements across RLVR on VLMs is preprinted on ArXiv."
+        content: "Our paper <a href=\"https://arxiv.org/abs/2602.12395\" target=\"_blank\"><strong>Frankenstein</strong></a> about analyzing consistent improvements across RLVR on VLMs is preprinted on ArXiv."
     },
     {
         date: "Sep 2025",
-        content: "I have joined University of Maryland as a PhD student, advised by Prof. Tianyi Zhou!"
+        content: "I have joined University of Maryland as a PhD student, advised by Prof. <a href=\"https://tianyizhou.github.io/\" target=\"_blank\">Tianyi Zhou</a>!"
     },
     {
         date: "Feb 2025",
-        content: "We release our witness of aha moment on 2B models!"
+        content: "We release our witness of <a href=\"https://arxiv.org/abs/2503.05132\" target=\"_blank\">aha moment</a> on 2B models!"
     },
     {
         date: "Jan 2025",
-        content: "Our paper <strong>MossBench</strong> about oversensitivity of VLMs has been accepted to <strong>ICLR 2025</strong>!"
+        content: "Our paper <a href=\"https://arxiv.org/abs/2406.17806\" target=\"_blank\"><strong>MOSSBench</strong></a> about oversensitivity of VLMs has been accepted to <strong>ICLR 2025</strong>!"
     },
     {
         date: "Nov 2024",
@@ -68,15 +68,15 @@ const newsItems = [
     },
     {
         date: "Oct 2024",
-        content: "Our paper <strong>DrAttack</strong> about attack on LLMs has been accepted to <strong>EMNLP 2024</strong>."
+        content: "Our paper <a href=\"https://arxiv.org/abs/2402.16914\" target=\"_blank\"><strong>DrAttack</strong></a> about attack on LLMs has been accepted to <strong>EMNLP 2024</strong>."
     },
     {
         date: "Jul 2024",
-        content: "Our paper about oversensitivity of Multimodal-LLMs is preprinted on ArXiv."
+        content: "Our paper <a href=\"https://arxiv.org/abs/2406.17806\" target=\"_blank\"><strong>MOSSBench</strong></a> about oversensitivity of Multimodal-LLMs is preprinted on ArXiv."
     },
     {
         date: "Feb 2024",
-        content: "Our paper about attack on LLMs is preprinted on ArXiv."
+        content: "Our paper <a href=\"https://arxiv.org/abs/2402.16914\" target=\"_blank\"><strong>DrAttack</strong></a> about attack on LLMs is preprinted on ArXiv."
     }
     // Add more news items here - they will be automatically collapsed
 ];

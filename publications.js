@@ -53,8 +53,6 @@ const publications = [
         venue: "ArXiv Preprint",
         venueShort: "ArXiv",
         year: 2026,
-        // award: "#3 Paper of the day",
-        awardLink: "https://huggingface.co/papers/2604.18543",
         tags: ["llm", "agents"],
         links: {
             paper: "https://arxiv.org/pdf/2604.18543",
@@ -86,7 +84,7 @@ const publications = [
     //     }
     // },
     {
-        title: "Superminds Test: Actively Evaluating Collective Intelligence of Agent Society via Probing Agents",
+        title: "SuperMinds Test: Actively Evaluating Collective Intelligence of Agent Society via Probing Agents",
         image: "images/IMG_0400.JPG",  // Add your paper thumbnail here
         altImage: "images/IMG_0400.png",
         authors: [
@@ -100,8 +98,6 @@ const publications = [
         venue: "ArXiv Preprint",
         venueShort: "ArXiv",
         year: 2026,
-        // award: "#3 Paper of the day",
-        awardLink: "https://huggingface.co/papers/2602.14299",
         tags: ["llm", "agents"],
         links: {
             paper: "https://arxiv.org/pdf/2604.22452",
@@ -122,8 +118,6 @@ const publications = [
         venue: "ACM Conference on AI and Agentic Systems",
         venueShort: "ACM CAIS 2026",
         year: 2026,
-        // award: "#3 Paper of the day",
-        awardLink: "https://huggingface.co/papers/2602.14299",
         tags: ["llm", "agents"],
         links: {
             paper: "https://arxiv.org/pdf/2602.14299",
@@ -144,7 +138,6 @@ const publications = [
         venue: "Conference on Language Modeling",
         venueShort: "COLM 2026",
         year: 2026,
-        // award: "600+ Github Stars",
         tags: ["rlvr", "vlm", "reasoning", "training dynamics"],
         links: {
             paper: "https://arxiv.org/pdf/2602.12395",
@@ -167,7 +160,7 @@ const publications = [
         venue: "ICLR 2026 Workshop ES-Reason",
         venueShort: "ICLR 2026 WS",
         year: 2026,
-        award: "600+ Github Stars",
+        award: "600+ Stars on GitHub",
         tags: ["rlvr", "vlm", "reasoning"],
         links: {
             paper: "https://arxiv.org/pdf/2503.05132",
@@ -177,7 +170,7 @@ const publications = [
         }
     },
     {
-        title: "Mossbench: Is your multimodal large language model oversensitive to safe queries?",
+        title: "MOSSBench: Is Your Multimodal Large Language Model Oversensitive to Safe Queries?",
         image: "images/IMG_0396.JPG",  // Add your paper thumbnail here
         altImage: "images/IMG_0396.png",
         authors: [
@@ -201,7 +194,7 @@ const publications = [
         }
     },
     {
-        title: "DrAttack: Prompt decomposition and reconstruction makes powerful LLM jailbreakers",
+        title: "DrAttack: Prompt Decomposition and Reconstruction Makes Powerful LLM Jailbreakers",
         image: "images/IMG_0395.JPG",  // Add your paper thumbnail here
         altImage: "images/IMG_0395.png",
         authors: [

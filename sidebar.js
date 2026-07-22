@@ -27,11 +27,12 @@ const sidebarConfig = {
 
     // Social Links
     social: [
+        { icon: "fas fa-envelope", url: "mailto:xiruili@umd.edu", title: "Email" },
         { icon: "ai ai-google-scholar", url: "https://scholar.google.com/citations?user=7hH0iM8AAAAJ&hl=en", title: "Google Scholar" },
         { icon: "fab fa-github", url: "https://github.com/xirui-li", title: "GitHub" },
         { icon: "fab fa-twitter", url: "https://twitter.com/xiruili7_li", title: "Twitter" },
         { icon: "fab fa-linkedin-in", url: "https://www.linkedin.com/in/xirui-li7/", title: "LinkedIn" },
-        { icon: "fas fa-file-pdf", url: "https://github.com/xirui-li/xirui-li.github.io/blob/main/files/CV.pdf", title: "CV" }
+        { icon: "fas fa-file-pdf", url: "files/CV.pdf", title: "CV" }
     ],
 
     // Navigation Links (each can have its own background image)

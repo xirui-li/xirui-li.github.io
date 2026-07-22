@@ -17,7 +17,7 @@ const experienceItems = [
         title: "Applied Research Intern",
         company: "AWS",
         logo: "images/aws_logo.svg",
-        description: "Working on agents.",
+        description: "Working on agents with the AgentCore team in NYC.",
         details: []
     },
     {
