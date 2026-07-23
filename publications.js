@@ -58,7 +58,6 @@ const publications = [
             paper: "https://arxiv.org/pdf/2604.18543",
             arxiv: "https://arxiv.org/abs/2604.18543",
             code: "https://github.com/xirui-li/ClawEnvKit",
-            project: "https://github.com/xirui-li/ClawEnvKit",
         }
     },
     // {
@@ -122,7 +121,7 @@ const publications = [
         links: {
             paper: "https://arxiv.org/pdf/2602.14299",
             arxiv: "https://arxiv.org/abs/2602.14299",
-            code: "https://github.com/MingLiiii/Moltbook_Socialization",
+            code: "https://github.com/tianyi-lab/Moltbook_Socialization",
             project: "https://ai-agent-society.com",
         }
     },
