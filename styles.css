@@ -609,25 +609,30 @@ body.simple-mode .publication.has-image {
 }
 
 .research-tag {
-    background: var(--sidebar-bg);
+    background: transparent;
     border: 1px solid var(--border-color);
-    padding: 0.4rem 0.9rem;
-    border-radius: 999px;
-    font-size: 0.85rem;
-    color: var(--text-color);
+    padding: 0.3rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-light);
     transition: all 0.2s;
 }
 
 .research-tag:hover {
-    border-color: var(--link-color);
+    border-color: rgba(90, 100, 145, 0.45);
     color: var(--link-color);
+    background: var(--link-tint);
     cursor: pointer;
 }
 
 .research-tag.active {
-    background: var(--link-color);
-    color: white;
-    border-color: var(--link-color);
+    background: rgba(194, 137, 195, 0.16);
+    color: var(--accent-ink);
+    border-color: rgba(194, 137, 195, 0.55);
+    font-weight: 600;
 }
 
 /* Publication highlight effect — frosted liquid glass */
@@ -663,18 +668,18 @@ body.simple-mode .publication.has-image {
 }
 
 .pub-tag {
-    font-size: 0.7rem;
-    padding: 0.15rem 0.55rem;
-    border-radius: 999px;
-    background: var(--sidebar-bg);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 0.18rem 0.6rem;
+    border-radius: 4px;
+    background: rgba(90, 100, 145, 0.06);
     color: var(--text-light);
-    border: 1px solid var(--border-color);
 }
 
 .pub-tag.matched {
-    background: var(--accent-ink);
-    color: white;
-    border-color: var(--accent-ink);
+    background: rgba(194, 137, 195, 0.22);
+    color: var(--accent-ink);
 }
 
 /* Clear filter button */
@@ -686,7 +691,7 @@ body.simple-mode .publication.has-image {
     background: var(--text-light);
     color: white;
     border: none;
-    border-radius: 999px;
+    border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s;
 }
