@@ -274,7 +274,7 @@ function renderPublication(pub) {
 
     const imageHtml = pub.image
         ? `<div class="pub-image">
-               <img src="${pub.image}" alt="${pub.title}"
+               <img src="${pub.image}" alt="${pub.title}" loading="lazy" decoding="async"
                     ${pub.altImage ? `data-alt-image="${pub.altImage}" data-original-image="${pub.image}" onclick="togglePubImage(this)" style="cursor:pointer;"` : ''}>
            </div>`
         : '';
@@ -318,8 +318,14 @@ function togglePubImage(img) {
     img.src = img.src.endsWith(alt.split('/').pop()) ? original : alt;
 }
 
-// Preload alt publication images to avoid white flash on first toggle
+// Preload alt publication images to avoid white flash on first toggle.
+// Deferred to window.load and skipped on small screens / Save-Data so the
+// ~15 MB of alt PNGs never compete with the visible thumbnails on mobile.
 function preloadPubImages() {
+    const saveData = navigator.connection && navigator.connection.saveData;
+    const smallScreen = window.matchMedia('(max-width: 900px)').matches;
+    if (saveData || smallScreen) return;
+
     publications.forEach(pub => {
         if (pub.altImage) {
             const img = new Image();
@@ -329,7 +335,5 @@ function preloadPubImages() {
 }
 
 // Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    renderAllPublications();
-    preloadPubImages();
-});
+document.addEventListener('DOMContentLoaded', renderAllPublications);
+window.addEventListener('load', preloadPubImages);

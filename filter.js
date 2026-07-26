@@ -312,6 +312,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ========== Scroll Reveal for Sections ==========
+    function revealEverything() {
+        document.querySelectorAll('.main-content section, .reveal-item').forEach(el => {
+            el.classList.add('revealed');
+        });
+    }
+
+    if (!('IntersectionObserver' in window)) {
+        revealEverything();
+        return;
+    }
+
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry, i) => {
             if (entry.isIntersecting) {
@@ -342,4 +353,8 @@ document.addEventListener('DOMContentLoaded', function() {
             itemObserver.observe(item);
         });
     }, 50);
+
+    // Failsafe: if anything is still hidden after 2.5s (missed observer
+    // callback, slow render, in-app browser quirks), reveal it anyway.
+    setTimeout(revealEverything, 2500);
 });

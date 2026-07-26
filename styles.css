@@ -1256,6 +1256,22 @@ footer {
 
 .main-content section.revealed {
     animation: fadeInUp 0.5s ease-out forwards;
+    /* Explicit final state: don't depend on the animation running
+       (reduced-motion settings or animation failures would otherwise
+       leave the section stuck at opacity 0) */
+    opacity: 1;
+    transform: none;
+}
+
+/* Respect reduced motion: skip hide-then-reveal entirely */
+@media (prefers-reduced-motion: reduce) {
+    .main-content section,
+    .reveal-item {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
 }
 
 /* Per-item reveal on scroll */
