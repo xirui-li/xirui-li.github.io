@@ -11,6 +11,10 @@
 
 const newsItems = [
     {
+        date: "Sep 2026",
+        content: "Our paper <a href=\"https://arxiv.org/abs/2609.36380\" target=\"_blank\"><strong>LEGO-Anything</strong></a> on reconstructing editable 3D scenes with coding agents is now available on arXiv."
+    },
+    {
         date: "Jul 2026",
         content: "Our paper <a href=\"https://arxiv.org/abs/2602.12395\" target=\"_blank\"><strong>Frankenstein</strong></a> on analyzing what RL improves for visual reasoning has been accepted to <strong>COLM 2026</strong>!"
     },

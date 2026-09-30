@@ -16,6 +16,32 @@
  */
 const publications = [
     {
+        title: "LEGO-Anything: Coding Agents for 3D Scene Reconstruction",
+        image: "images/lego-anything.webp",
+        authors: [
+            { name: "Xirui Li", me: true },
+            "Peng Shi",
+            "Mingwen Dong",
+            "Sheng Zhang",
+            "Zhuoyan Xu",
+            "Dongkyu Lee",
+            "Shuaichen Chang",
+            "Yi Xiang",
+            "Lin Pan",
+            "Jiarong Jiang",
+        ],
+        venue: "ArXiv Preprint",
+        venueShort: "ArXiv",
+        year: 2026,
+        tags: ["vlm", "llm", "agents"],
+        links: {
+            paper: "https://arxiv.org/pdf/2609.36380",
+            arxiv: "https://arxiv.org/abs/2609.36380",
+            project: "https://lego-anything.com/",
+            huggingface: "https://huggingface.co/papers/2609.36380",
+        }
+    },
+    {
         title: "Guava: An Effective and Universal Harness for Embodied Manipulation",
         image: "images/IMG_0403.JPG",
         altImage: "images/IMG_0403.png",
@@ -36,6 +62,7 @@ const publications = [
         links: {
             paper: "https://arxiv.org/pdf/2606.18363",
             arxiv: "https://arxiv.org/abs/2606.18363",
+            code: "https://github.com/hdacnw/guava-release",
             project: "https://guava-harness.github.io/",
         }
     },
@@ -242,6 +269,7 @@ function renderLinks(links) {
         arxiv: 'arXiv',
         code: 'Code',
         project: 'Project',
+        huggingface: 'Hugging Face',
         demo: 'Demo',
         video: 'Video',
         slides: 'Slides',
