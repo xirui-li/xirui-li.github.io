@@ -32,7 +32,7 @@ const sidebarConfig = {
         { icon: "fab fa-github", url: "https://github.com/xirui-li", title: "GitHub" },
         { icon: "fab fa-twitter", url: "https://twitter.com/xiruili7_li", title: "Twitter" },
         { icon: "fab fa-linkedin-in", url: "https://www.linkedin.com/in/xirui-li7/", title: "LinkedIn" },
-        { icon: "fas fa-file-pdf", url: "files/CV.pdf", title: "CV" }
+        { icon: "fas fa-file-pdf", url: "files/Xirui_Li_CV_latest.pdf", title: "CV" }
     ],
 
     // Navigation Links (each can have its own background image)
