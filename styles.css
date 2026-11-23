@@ -136,7 +136,7 @@ h3 { color: var(--ink); font-size: var(--type-body); line-height: var(--leading)
 .pub-filter { border-bottom: 1px dashed var(--line); margin-bottom: 12px; }
 .publication-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin-bottom: 16px; }
 .main-content .publication-heading h2 { margin-bottom: 0; }
-.section-note { color: var(--muted); font-size: var(--type-meta); margin: 0; }
+.section-note { color: var(--muted); font-size: var(--type-meta); margin: 0 0 0 auto; text-align: right; }
 .publication {
     position: relative; isolation: isolate;
     padding-block: 18px; border-bottom: 1px dashed var(--line);
