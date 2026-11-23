@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/xirui-li/lego-anything-website",
+  "commit": "8ec408aca7210945f20a7af29a8bb29296265e67",
+  "reused": [
+    "assets/fonts/"
+  ],
+  "design": "Typography, color palette, and navigation adapted from LEGO-Anything, with a left profile column and a right content column."
+}

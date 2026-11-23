@@ -93,7 +93,7 @@ function renderNews() {
 
     const html = newsItems.map(item => `
         <li class="news-item reveal-item">
-            <span class="news-date">[${item.date}]</span>
+            <span class="news-date">${item.date}</span>
             <span class="news-content">${item.content}</span>
         </li>
     `).join('');

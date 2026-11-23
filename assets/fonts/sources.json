@@ -1,0 +1,10 @@
+{
+  "inter-400.woff2": {
+    "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+    "weight": "400"
+  },
+  "libre-baskerville-400.woff2": {
+    "source": "https://fonts.gstatic.com/s/librebaskerville/v24/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxM.woff2",
+    "weight": "400"
+  }
+}

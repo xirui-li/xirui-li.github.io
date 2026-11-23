@@ -10,10 +10,9 @@
     <link rel="icon" type="image/png" href="images/page_icon.png">
     <link rel="apple-touch-icon" href="images/page_icon.png">
 
-    <!-- Fonts (Rusty Lake style: DIN Condensed + Helvetica Neue) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/libre-baskerville-400.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -46,66 +45,38 @@
     </script>
 </head>
 <body>
-    <div class="wrapper">
-        <!-- ========== Left Sidebar (rendered by sidebar.js) ========== -->
-        <aside id="sidebar" class="sidebar"></aside>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header id="sidebar" class="site-header"></header>
 
-        <!-- ========== Main Content ========== -->
-        <main class="main-content">
-            <!-- About -->
-            <section id="about" class="about">
-                <h2>About Me
-                    <button class="simple-mode-toggle" id="simpleModeToggle" title="Toggle simple mode (hide images)">
-                        <i class="fas fa-image"></i> <span>Simple Mode</span>
-                    </button>
-                </h2>
+    <div class="wrapper">
+        <!-- Personal introduction stays in the left column on desktop. -->
+        <section id="about" class="profile-column" aria-label="About Xirui Li">
+            <div class="about">
+                <a class="about-photo" href="images/profile_detailed.jpg" target="_blank" rel="noopener" aria-label="View full photo of Xirui Li">
+                    <img src="images/profile.jpeg" alt="Xirui Li" width="104" height="104">
+                </a>
+                <p class="eyebrow">Ph.D. Student · University of Maryland</p>
+                <div id="profileLinks" class="social-icons" aria-label="Contact and profiles"></div>
                 <div class="about-content">
-                    <div class="about-photo" onclick="window.open('images/profile_detailed.jpg', '_blank')">
-                        <img src="images/profile.jpeg" alt="Xirui Li">
-                        <div class="about-photo-overlay">
-                            <button class="about-photo-view-btn">
-                                <i class="fas fa-expand"></i> View
-                            </button>
-                        </div>
-                    </div>
                     <div class="about-text">
                         <p>
                             Hi! I am a second-year Ph.D. student in CS at the
                             <a href="https://www.cs.umd.edu/">University of Maryland (UMD)</a>,
                             advised by Prof. <a href="https://tianyizhou.github.io/">Tianyi Zhou</a>.
                         </p>
-                        <p>
-                            Before starting my Ph.D., I was a master's student at
-                            <a href="https://www.ucla.edu/">UCLA</a>.
-                            I am a member of
-                            <a href="https://turningpointai.org/">TurningPointAI</a>,
-                            where I worked under the guidance of
-                            Dr. <a href="https://ruocwang.github.io/">Ruochen Wang</a> and
-                            Prof. <a href="https://web.cs.ucla.edu/~chohsieh/">Cho-Jui Hsieh</a>.
-                            I obtained my B.S. degree from
-                            <a href="https://www.tum.de/">TUM</a>,
-                            under the supervision of
-                            Dr. <a href="https://scholar.google.com/citations?user=Kce9W-8AAAAJ&hl=en">Shen</a> and
-                            Dr. <a href="https://scholar.google.com/citations?user=Ss1kHO8AAAAJ&hl=en">Qiu</a>.
-                        </p>
+                        <div id="research" class="about-research" aria-labelledby="research-heading">
+                            <h2 id="research-heading">Research Interests</h2>
+                            <p>
+                                I am actively working on 1) developing scalable training algorithms and infrastructure for agents, and 2) deploying agents from digital environments into the physical world.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Research Interests -->
-            <section id="research" class="research">
-                <h2>Research Interests</h2>
-                <p>
-                    I am actively working on 1) developing scalable training algorithms and infrastructure for agents, and 2) deploying agents from digital environments into the physical world.
-                </p>
-                <!-- Tags rendered by tags.js -->
-                <div class="research-tags"></div>
-                <p class="filter-hint">
-                    Click on a tag to filter publications
-                    <button class="clear-filter" id="clearFilter">Clear</button>
-                </p>
-            </section>
-
+        <!-- News and subsequent sections occupy the right column. -->
+        <main id="main" class="main-content">
             <!-- News (rendered by news.js) -->
             <section id="news">
                 <h2>News</h2>
@@ -123,21 +94,23 @@
 
             <!-- Publications -->
             <section id="publications">
-                <h2>Publications</h2>
-                <!-- Filter tags (rendered by tags.js, synced with Research Interests) -->
-                <div class="pub-filter">
-                    <div class="research-tags"></div>
-                    <button class="clear-filter" id="clearFilterPub">Clear</button>
+                <div class="publication-heading">
+                    <h2>Publications</h2>
+                    <p class="section-note">
+                        (* indicates equal contribution) | <a href="https://scholar.google.com/citations?user=7hH0iM8AAAAJ&hl=en" target="_blank">Google Scholar</a>
+                    </p>
                 </div>
-                <p style="margin-bottom: 1rem; color: var(--text-light); font-size: 0.9rem;">
-                    (* indicates equal contribution) | <a href="https://scholar.google.com/citations?user=7hH0iM8AAAAJ&hl=en" target="_blank">Google Scholar</a>
-                </p>
+                <!-- Filter tags rendered by tags.js -->
+                <div class="pub-filter" role="group" aria-label="Filter publications by topic">
+                    <div class="research-tags"></div>
+                </div>
+                <p id="filterStatus" class="sr-only" role="status"></p>
 
                 <!-- Publications will be rendered here by publications.js -->
                 <div id="publications-list">
-                    <div class="skeleton-pub"><div class="skeleton skeleton-pub-image"></div><div class="skeleton-pub-content"><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line medium"></div><div class="skeleton skeleton-line short"></div><div class="skeleton skeleton-line short"></div></div></div>
-                    <div class="skeleton-pub"><div class="skeleton skeleton-pub-image"></div><div class="skeleton-pub-content"><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line medium"></div><div class="skeleton skeleton-line short"></div><div class="skeleton skeleton-line short"></div></div></div>
-                    <div class="skeleton-pub"><div class="skeleton skeleton-pub-image"></div><div class="skeleton-pub-content"><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line medium"></div><div class="skeleton skeleton-line short"></div><div class="skeleton skeleton-line short"></div></div></div>
+                    <div class="skeleton-pub"><div class="skeleton-pub-content"><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line medium"></div><div class="skeleton skeleton-line short"></div><div class="skeleton skeleton-line short"></div></div></div>
+                    <div class="skeleton-pub"><div class="skeleton-pub-content"><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line medium"></div><div class="skeleton skeleton-line short"></div><div class="skeleton skeleton-line short"></div></div></div>
+                    <div class="skeleton-pub"><div class="skeleton-pub-content"><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line medium"></div><div class="skeleton skeleton-line short"></div><div class="skeleton skeleton-line short"></div></div></div>
                 </div>
             </section>
 
@@ -171,14 +144,11 @@
             <!-- Footer -->
             <footer>
                 <p>&copy; 2026 Xirui Li &middot; Last updated: September 2026</p>
-                <p style="margin-top: 0.3rem;">
-                    Template inspired by <a href="https://mars-tin.github.io/">Martin Ma</a>
+                <p class="design-credit">
+                    Design adapted from <a href="https://lego-anything.com/">LEGO-Anything</a> · <a href="#about">Back to top</a>
                 </p>
-                <p style="margin-top: 0.3rem;">
-                    Wallpaper is a style from <a href="https://www.rustylake.com/">Rusty Lake</a> and hand-drawn by <a href="https://xhslink.com/m/54HQ2Od65Rs" target="_blank">@吱吱啵啵</a> on 小红书
-                </p>
-                <div style="margin-top: 0.8rem;">
-                    <script type="text/javascript" id="mapmyvisitors" async defer src="https://mapmyvisitors.com/map.js?cl=d6b9d0&w=200&t=n&d=zRT1fuyeCxN4sJoAHdqVRGT1KVIC1Dv8boGTs0xcPN0&co=ffffff&cmo=b29ebc&cmn=8c85a9&ct=626e98"></script>
+                <div class="visitor-map">
+                    <script type="text/javascript" id="mapmyvisitors" async defer src="https://mapmyvisitors.com/map.js?cl=d6d8d0&w=200&t=n&d=zRT1fuyeCxN4sJoAHdqVRGT1KVIC1Dv8boGTs0xcPN0&co=ffffff&cmo=566340&cmn=777772&ct=484a2e"></script>
                 </div>
             </footer>
         </main>

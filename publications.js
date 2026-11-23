@@ -5,10 +5,10 @@
  *
  * Fields:
  *   - title: Paper title
- *   - image: (optional) Path to paper thumbnail/teaser image (e.g., "images/paper1.png")
  *   - authors: Array of author names (use { name: "Your Name", me: true } to highlight yourself)
  *   - venue: Conference/Journal name
  *   - venueShort: Abbreviation (e.g., "CVPR", "NeurIPS")
+ *   - venueNote: (optional) Description displayed after the venue and year
  *   - year: Publication year
  *   - award: (optional) Award text (e.g., "Best Paper", "Spotlight")
  *   - tags: Array of research area tags (should match tags in index.html)
@@ -57,6 +57,7 @@ const publications = [
         ],
         venue: "ArXiv Preprint",
         venueShort: "ArXiv",
+        venueNote: "The <strong>first</strong> agent-as-policy study for manipulation",
         year: 2026,
         tags: ["embodied", "agents", "vlm", "llm"],
         links: {
@@ -101,7 +102,7 @@ const publications = [
     //     year: 2026,
     //     // award: "#3 Paper of the day",
     //     awardLink: "https://huggingface.co/papers/2602.14299",
-    //     tags: ["llm", "agents", "reasoning"],
+    //     tags: ["llm", "agents", "post-training"],
     //     links: {
     //         paper: "https://arxiv.org/pdf/2603.16642",
     //         arxiv: "https://arxiv.org/abs/2603.16642",
@@ -164,7 +165,7 @@ const publications = [
         venue: "Conference on Language Modeling",
         venueShort: "COLM 2026",
         year: 2026,
-        tags: ["rlvr", "vlm", "reasoning", "training dynamics"],
+        tags: ["post-training", "vlm"],
         links: {
             paper: "https://arxiv.org/pdf/2602.12395",
             arxiv: "https://arxiv.org/abs/2602.12395",
@@ -185,9 +186,10 @@ const publications = [
         ],
         venue: "ICLR 2026 Workshop ES-Reason",
         venueShort: "ICLR 2026 WS",
+        venueNote: "The <strong>first</strong> replicate of R1-zero's training on small VLM",
         year: 2026,
         award: "600+ Stars on GitHub",
-        tags: ["rlvr", "vlm", "reasoning"],
+        tags: ["post-training", "vlm"],
         links: {
             paper: "https://arxiv.org/pdf/2503.05132",
             arxiv: "https://arxiv.org/abs/2503.05132",
@@ -276,40 +278,48 @@ function renderLinks(links) {
         poster: 'Poster',
         bibtex: 'BibTeX'
     };
+    const linkIcons = {
+        paper: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8ZM14 2v6h6M8 13h8M8 17h6"/>',
+        arxiv: '<path d="M12 5c-3-2-6-2-10-1v16c4-1 7-1 10 1 3-2 6-2 10-1V4c-4-1-7-1-10 1ZM12 5v16"/>',
+        code: '<path d="m8 6-6 6 6 6m8-12 6 6-6 6M14 4l-4 16"/>',
+        project: '<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a18 18 0 0 1 0 20 18 18 0 0 1 0-20Z"/>',
+        huggingface: '<circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 3 4 3 4-3 4-3M8 8h.01M16 8h.01"/>',
+        demo: '<rect x="2" y="3" width="20" height="16" rx="2"/><path d="m10 7 6 4-6 4ZM8 22h8M12 19v3"/>',
+        video: '<rect x="2" y="5" width="14" height="14" rx="2"/><path d="m16 10 6-4v12l-6-4"/>',
+        slides: '<path d="M2 3h20M4 3v14h16V3M12 17v5M8 22l4-3 4 3"/>',
+        poster: '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>',
+        bibtex: '<path d="M9 3H7a2 2 0 0 0-2 2v4l-2 3 2 3v4a2 2 0 0 0 2 2h2M15 3h2a2 2 0 0 1 2 2v4l2 3-2 3v4a2 2 0 0 1-2 2h-2"/>'
+    };
 
     return Object.entries(links)
         .map(([type, url]) => {
             const label = linkLabels[type] || type;
-            return `<a href="${url}" class="pub-link">${label}</a>`;
+            const icon = linkIcons[type] || '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>';
+            return `<a href="${url}" class="pub-link"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${icon}</svg><span>${label}</span></a>`;
         })
         .join('\n');
 }
 
 function renderTags(tags) {
     return tags
-        .map(tag => `<span class="pub-tag" data-tag="${tag}">${tag.toUpperCase()}</span>`)
+        .map(tag => `<button class="pub-tag" type="button" data-tag="${tag}" aria-pressed="false">${researchTags.find(item => item.id === tag)?.label || tag}</button>`)
         .join('\n');
 }
 
 function renderPublication(pub) {
-    const venueDisplay = pub.venueShort
-        ? `${pub.venue} (<strong>${pub.venueShort}</strong>), ${pub.year}`
-        : `${pub.venue}, ${pub.year}`;
+    const venueName = pub.venueShort
+        ? `${pub.venue} (<strong>${pub.venueShort}</strong>)`
+        : pub.venue;
+    const venueDisplay = pub.venueNote
+        ? `${venueName}, ${pub.year} | ${pub.venueNote}`
+        : `${venueName}, ${pub.year}`;
 
     const awardHtml = pub.award
-        ? `<span class="award">🏆 ${pub.awardLink ? `<a href="${pub.awardLink}" target="_blank">${pub.award}</a>` : pub.award}</span>`
-        : '';
-
-    const imageHtml = pub.image
-        ? `<div class="pub-image">
-               <img src="${pub.image}" alt="${pub.title}" loading="lazy" decoding="async"
-                    ${pub.altImage ? `data-alt-image="${pub.altImage}" data-original-image="${pub.image}" onclick="togglePubImage(this)" style="cursor:pointer;"` : ''}>
-           </div>`
+        ? `<span class="award"> | 🏆 ${pub.awardLink ? `<a href="${pub.awardLink}" target="_blank">${pub.award}</a>` : pub.award}</span>`
         : '';
 
     return `
-        <div class="publication reveal-item ${pub.image ? 'has-image' : ''}" data-tags="${pub.tags.join(',')}">
-            ${imageHtml}
+        <div class="publication reveal-item" data-tags="${pub.tags.join(',')}">
             <div class="pub-content">
                 <div class="pub-title">
                     <a href="${pub.links.paper || pub.links.arxiv || '#'}">${pub.title}</a>
@@ -318,14 +328,15 @@ function renderPublication(pub) {
                     ${renderAuthors(pub.authors)}
                 </div>
                 <div class="pub-venue">
-                    ${venueDisplay}
-                    ${awardHtml}
+                    ${venueDisplay}${awardHtml}
                 </div>
-                <div class="pub-links">
-                    ${renderLinks(pub.links)}
-                </div>
-                <div class="pub-tags">
-                    ${renderTags(pub.tags)}
+                <div class="pub-footer">
+                    <div class="pub-tags">
+                        ${renderTags(pub.tags)}
+                    </div>
+                    <div class="pub-links">
+                        ${renderLinks(pub.links)}
+                    </div>
                 </div>
             </div>
         </div>
@@ -339,29 +350,5 @@ function renderAllPublications() {
     container.innerHTML = publications.map(renderPublication).join('\n');
 }
 
-function togglePubImage(img) {
-    const alt = img.getAttribute('data-alt-image');
-    const original = img.getAttribute('data-original-image');
-    if (!alt) return;
-    img.src = img.src.endsWith(alt.split('/').pop()) ? original : alt;
-}
-
-// Preload alt publication images to avoid white flash on first toggle.
-// Deferred to window.load and skipped on small screens / Save-Data so the
-// ~15 MB of alt PNGs never compete with the visible thumbnails on mobile.
-function preloadPubImages() {
-    const saveData = navigator.connection && navigator.connection.saveData;
-    const smallScreen = window.matchMedia('(max-width: 900px)').matches;
-    if (saveData || smallScreen) return;
-
-    publications.forEach(pub => {
-        if (pub.altImage) {
-            const img = new Image();
-            img.src = pub.altImage;
-        }
-    });
-}
-
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', renderAllPublications);
-window.addEventListener('load', preloadPubImages);

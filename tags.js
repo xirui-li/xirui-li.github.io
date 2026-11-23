@@ -2,7 +2,7 @@
  * Research Tags Configuration
  *
  * Define all research area tags here. They will be automatically rendered
- * in both the Research Interests and Publications sections.
+ * in the Publications filter.
  *
  * To add a new tag:
  *   1. Add an entry to this array with { id: "tag-id", label: "Display Label" }
@@ -14,13 +14,11 @@
 
 const researchTags = [
     { id: "embodied", label: "Embodied" },
-    { id: "rlvr", label: "RLVR" },
-    { id: "reasoning", label: "Reasoning" },
+    { id: "post-training", label: "Post-training" },
     { id: "trustworthy", label: "Trustworthy" },
     { id: "vlm", label: "VLM" },
     { id: "llm", label: "LLM" },
     { id: "agents", label: "Agents" },
-    { id: "training dynamics", label: "Training Dynamics" },
     // Add more tags here, e.g.:
     // { id: "safety", label: "AI Safety" },
     // { id: "generation", label: "Image/Video Generation" },
@@ -29,19 +27,16 @@ const researchTags = [
 // ========== Render Functions ==========
 
 function renderResearchTags() {
-    // Render tags in Research Interests section
-    const researchContainer = document.querySelector('#research .research-tags');
-    if (researchContainer) {
-        researchContainer.innerHTML = researchTags.map(tag =>
-            `<span class="research-tag" data-tag="${tag.id}">${tag.label}</span>`
-        ).join('');
-    }
-
     // Render tags in Publications filter section
     const pubFilterContainer = document.querySelector('#publications .pub-filter .research-tags');
     if (pubFilterContainer) {
-        pubFilterContainer.innerHTML = researchTags.map(tag =>
-            `<span class="research-tag" data-tag="${tag.id}">${tag.label}</span>`
+        const filters = [
+            { id: null, label: 'All' },
+            ...[...researchTags].sort((a, b) => a.label.localeCompare(b.label, 'en', { sensitivity: 'base' }))
+        ];
+        pubFilterContainer.innerHTML = filters.map(tag => tag.id
+            ? `<button class="research-tag" type="button" data-tag="${tag.id}" aria-pressed="false" aria-controls="publications-list">${tag.label}</button>`
+            : '<button class="research-tag active" id="clearFilterPub" type="button" aria-pressed="true" aria-controls="publications-list">All</button>'
         ).join('');
     }
 }

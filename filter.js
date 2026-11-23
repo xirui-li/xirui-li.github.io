@@ -1,360 +1,128 @@
-/**
- * UI Interactions
- * Handles tag-based filtering, news toggle, scroll spy, and other UI features
- */
+/** Navigation, publication filters, and the news archive. */
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navigation = document.getElementById('nav-links');
+    const navLinks = [...document.querySelectorAll('[data-section-link]')];
+    const header = document.querySelector('.site-header');
 
-document.addEventListener('DOMContentLoaded', function() {
-    // ========== Sidebar Background Switching ==========
-    const sidebar = document.getElementById('sidebar');
-    let currentBgSection = null;
-    let bgDisabled = false;
-
-    // Build background mapping from sidebarConfig
-    const sectionBackgrounds = {};
-    if (typeof sidebarConfig !== 'undefined' && sidebarConfig.nav) {
-        sidebarConfig.nav.forEach(navItem => {
-            const sectionId = navItem.href.replace('#', '');
-            if (navItem.backgroundImage) {
-                sectionBackgrounds[sectionId] = navItem.backgroundImage;
-            }
-        });
+    function closeMenu() {
+        navigation?.classList.remove('is-open');
+        menuToggle?.setAttribute('aria-expanded', 'false');
+        menuToggle?.setAttribute('aria-label', 'Open navigation');
     }
-
-    function updateSidebarBackground(sectionId) {
-        if (!sidebar) return;
-        currentBgSection = sectionId;
-
-        if (bgDisabled) return;
-
-        const bgImage = sectionBackgrounds[sectionId] ||
-            (typeof sidebarConfig !== 'undefined' ? sidebarConfig.defaultBackground : null);
-
-        if (bgImage) {
-            sidebar.classList.add('has-bg-image');
-            sidebar.style.setProperty('--sidebar-bg-image', `url('${bgImage}')`);
-            sidebar.style.setProperty('--sidebar-overlay-opacity',
-                typeof sidebarConfig !== 'undefined' ? sidebarConfig.backgroundOverlay : 0.7);
-        } else {
-            sidebar.classList.remove('has-bg-image');
-            sidebar.style.removeProperty('--sidebar-bg-image');
-        }
-    }
-
-    // ========== Background Toggle Button ==========
-    const bgToggle = document.getElementById('bgToggle');
-
-    function disableBackground() {
-        bgDisabled = true;
-        sidebar.classList.remove('has-bg-image');
-        sidebar.style.removeProperty('--sidebar-bg-image');
-        if (bgToggle) {
-            bgToggle.classList.add('bg-off');
-            const icon = bgToggle.querySelector('i');
-            if (icon) icon.className = 'fas fa-eye-slash';
-        }
-    }
-
-    function enableBackground() {
-        bgDisabled = false;
-        if (bgToggle) {
-            bgToggle.classList.remove('bg-off');
-            const icon = bgToggle.querySelector('i');
-            if (icon) icon.className = 'fas fa-eye';
-        }
-        const savedSection = currentBgSection;
-        currentBgSection = null;
-        updateSidebarBackground(savedSection || 'default');
-    }
-
-    if (bgToggle) {
-        bgToggle.addEventListener('click', function() {
-            if (bgDisabled) {
-                enableBackground();
-            } else {
-                disableBackground();
-            }
-        });
-    }
-
-    // ========== Simple Mode Toggle ==========
-    const simpleModeToggle = document.getElementById('simpleModeToggle');
-    if (simpleModeToggle) {
-        simpleModeToggle.addEventListener('click', function() {
-            const isActive = this.classList.toggle('active');
-            const icon = this.querySelector('i');
-
-            if (isActive) {
-                document.body.classList.add('simple-mode');
-                icon.className = 'fas fa-image';
-                disableBackground();
-            } else {
-                document.body.classList.remove('simple-mode');
-                icon.className = 'fas fa-image';
-                enableBackground();
-            }
-        });
-    }
-
-    // ========== Auto-enable Simple Mode by default ==========
-    if (simpleModeToggle) {
-        simpleModeToggle.classList.add('active');
-        document.body.classList.add('simple-mode');
-        disableBackground();
-    }
-
-    // ========== Scroll Spy for Navigation ==========
-    const navLinks = document.querySelectorAll('.sidebar-nav a');
-    const sections = [];
-
-    // Collect all sections that have corresponding nav links
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href && href.startsWith('#')) {
-            const section = document.querySelector(href);
-            if (section) {
-                sections.push({ id: href.substring(1), element: section, link: link });
-            }
+    menuToggle?.addEventListener('click', () => {
+        const expanded = menuToggle.getAttribute('aria-expanded') !== 'true';
+        menuToggle.setAttribute('aria-expanded', String(expanded));
+        menuToggle.setAttribute('aria-label', expanded ? 'Close navigation' : 'Open navigation');
+        navigation.classList.toggle('is-open', expanded);
+    });
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && menuToggle?.getAttribute('aria-expanded') === 'true') {
+            closeMenu();
+            menuToggle.focus();
         }
     });
+    document.addEventListener('click', event => {
+        if (!header.contains(event.target)) closeMenu();
+    });
+    navigation?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    window.matchMedia('(min-width: 1101px)').addEventListener('change', closeMenu);
 
+    const sections = navLinks.map(link => ({
+        link, element: document.querySelector(link.getAttribute('href'))
+    })).filter(section => section.element);
     function updateActiveNav() {
-        const scrollPosition = window.scrollY + 100; // Offset for better UX
-
-        // Check if we're above the first nav section (show default background)
-        if (sections.length > 0 && scrollPosition < sections[0].element.offsetTop) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            updateSidebarBackground('default');
-            return;
-        }
-
-        // Find the current section
-        let currentSection = sections[0];
-        for (const section of sections) {
-            if (section.element.offsetTop <= scrollPosition) {
-                currentSection = section;
-            }
-        }
-
-        // Update active class
-        navLinks.forEach(link => link.classList.remove('active'));
-        if (currentSection) {
-            currentSection.link.classList.add('active');
-            // Update sidebar background
-            updateSidebarBackground(currentSection.id);
-        }
+        const offset = header.offsetHeight + 32;
+        let current = sections[0];
+        sections.forEach(section => {
+            if (section.element.getBoundingClientRect().top <= offset) current = section;
+        });
+        sections.forEach(section => {
+            const active = section === current;
+            section.link.classList.toggle('active', active);
+            if (active) section.link.setAttribute('aria-current', 'location');
+            else section.link.removeAttribute('aria-current');
+        });
     }
-
-    // Initial check
+    let scrollFrame = 0;
+    window.addEventListener('scroll', () => {
+        if (scrollFrame) return;
+        scrollFrame = requestAnimationFrame(() => {
+            updateActiveNav();
+            scrollFrame = 0;
+        });
+    }, { passive: true });
+    window.addEventListener('resize', updateActiveNav);
+    window.addEventListener('load', updateActiveNav);
     updateActiveNav();
 
-    // Update on scroll (with throttle)
-    let scrollTimeout;
-    window.addEventListener('scroll', function() {
-        if (scrollTimeout) return;
-        scrollTimeout = setTimeout(function() {
-            updateActiveNav();
-            scrollTimeout = null;
-        }, 50);
-    });
-
-    // Also update when clicking nav links
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            navLinks.forEach(l => l.classList.remove('active'));
-            this.classList.add('active');
-            // Update sidebar background on click
-            const sectionId = this.getAttribute('href').replace('#', '');
-            updateSidebarBackground(sectionId);
-        });
-    });
-
-    // ========== News Toggle ==========
     const newsList = document.getElementById('newsList');
     const newsToggle = document.getElementById('newsToggle');
-    const newsItems = newsList ? newsList.querySelectorAll('.news-item') : [];
-    const NEWS_COLLAPSED_COUNT = 4;
-
-    // Only show toggle button if there are more than 4 news items
-    if (newsItems.length > NEWS_COLLAPSED_COUNT && newsToggle) {
-        newsToggle.style.display = 'flex';
-
-        newsToggle.addEventListener('click', function() {
-            const isExpanded = newsList.classList.toggle('expanded');
-            const toggleText = this.querySelector('.toggle-text');
-
-            if (isExpanded) {
-                toggleText.textContent = 'Show less';
-            } else {
-                toggleText.textContent = 'Show more';
-            }
+    if (newsList?.querySelectorAll('.news-item').length > 4 && newsToggle) {
+        newsToggle.style.display = 'inline-flex';
+        newsToggle.setAttribute('aria-expanded', 'false');
+        newsToggle.setAttribute('aria-controls', 'newsList');
+        newsToggle.addEventListener('click', () => {
+            const expanded = newsList.classList.toggle('expanded');
+            newsToggle.setAttribute('aria-expanded', String(expanded));
+            newsToggle.querySelector('.toggle-text').textContent = expanded ? 'Show less' : 'Show more';
         });
-
-        // Set initial text
-        const toggleText = newsToggle.querySelector('.toggle-text');
-        toggleText.textContent = 'Show more';
     }
 
-    // ========== Publication Filtering ==========
-    // Get all research tags from both sections
-    const allResearchTags = document.querySelectorAll('.research-tags .research-tag');
-    const clearButtons = [
-        document.getElementById('clearFilter'),
-        document.getElementById('clearFilterPub')
-    ].filter(Boolean);
-
+    const researchTags = [...document.querySelectorAll('.research-tags .research-tag[data-tag]')];
+    const clearButtons = [document.getElementById('clearFilterPub')].filter(Boolean);
+    const publicationList = document.getElementById('publications-list');
+    // Retain the initial order so each selection forms stable groups and All restores it.
+    const publications = [...document.querySelectorAll('.publication')];
+    const filterStatus = document.getElementById('filterStatus');
     let activeTag = null;
 
-    // Click on any research tag
-    allResearchTags.forEach(tag => {
-        tag.addEventListener('click', function() {
-            const selectedTag = this.getAttribute('data-tag');
-
-            // If clicking the same tag, clear filter
-            if (activeTag === selectedTag) {
-                clearFilter();
-                return;
-            }
-
-            activeTag = selectedTag;
-
-            // Update active state on ALL research tags with same data-tag
-            allResearchTags.forEach(t => {
-                if (t.getAttribute('data-tag') === selectedTag) {
-                    t.classList.add('active');
-                } else {
-                    t.classList.remove('active');
-                }
-            });
-
-            // Show all clear buttons
-            clearButtons.forEach(btn => btn.classList.add('visible'));
-
-            // Filter and highlight publications
-            filterPublications(selectedTag);
-
-            // Scroll to publications section if clicked from Research Interests
-            if (this.closest('#research')) {
-                const pubSection = document.getElementById('publications');
-                pubSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+    function applyFilter(tag) {
+        activeTag = tag;
+        researchTags.forEach(button => {
+            const active = button.dataset.tag === tag;
+            button.classList.toggle('active', active);
+            button.setAttribute('aria-pressed', String(active));
         });
-    });
-
-    // Clear filter buttons
-    clearButtons.forEach(btn => {
-        btn.addEventListener('click', clearFilter);
-    });
-
-    function filterPublications(tag) {
-        const publications = document.querySelectorAll('.publication');
-
-        publications.forEach(pub => {
-            const pubTags = pub.getAttribute('data-tags').split(',');
-            const pubTagElements = pub.querySelectorAll('.pub-tag');
-
-            if (pubTags.includes(tag)) {
-                // Highlight matching publication
-                pub.classList.add('highlighted');
-                pub.classList.remove('dimmed');
-
-                // Highlight matching tag within publication
-                pubTagElements.forEach(tagEl => {
-                    if (tagEl.getAttribute('data-tag') === tag) {
-                        tagEl.classList.add('matched');
-                    } else {
-                        tagEl.classList.remove('matched');
-                    }
-                });
-            } else {
-                // Dim non-matching publication
-                pub.classList.remove('highlighted');
-                pub.classList.add('dimmed');
-
-                pubTagElements.forEach(tagEl => {
-                    tagEl.classList.remove('matched');
-                });
-            }
+        clearButtons.forEach(button => {
+            button.classList.toggle('active', !tag);
+            button.setAttribute('aria-pressed', String(!tag));
         });
-    }
-
-    function clearFilter() {
-        const publications = document.querySelectorAll('.publication');
-
-        activeTag = null;
-
-        // Remove active state from ALL research tags
-        allResearchTags.forEach(t => t.classList.remove('active'));
-
-        // Hide all clear buttons
-        clearButtons.forEach(btn => btn.classList.remove('visible'));
-
-        // Reset all publications
-        publications.forEach(pub => {
-            pub.classList.remove('highlighted', 'dimmed');
-            pub.querySelectorAll('.pub-tag').forEach(tagEl => {
-                tagEl.classList.remove('matched');
+        const matchingPublications = [];
+        const otherPublications = [];
+        publications.forEach(publication => {
+            const matched = Boolean(tag) && publication.dataset.tags.split(',').includes(tag);
+            (matched ? matchingPublications : otherPublications).push(publication);
+            publication.classList.toggle('highlighted', matched);
+            publication.classList.toggle('dimmed', Boolean(tag) && !matched);
+            publication.querySelectorAll('.pub-tag').forEach(button => {
+                const active = button.dataset.tag === tag;
+                button.classList.toggle('matched', active);
+                button.setAttribute('aria-pressed', String(active));
             });
         });
-    }
-
-    // Also allow clicking on pub-tags to filter
-    // Use event delegation since publications are dynamically rendered
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('pub-tag')) {
-            const clickedTag = e.target.getAttribute('data-tag');
-
-            // Find and click the corresponding research tag
-            const correspondingTag = document.querySelector(`.research-tags .research-tag[data-tag="${clickedTag}"]`);
-            if (correspondingTag) {
-                correspondingTag.click();
-            }
+        const orderedPublications = tag
+            ? [...matchingPublications, ...otherPublications]
+            : publications;
+        if (publicationList && orderedPublications.some((publication, index) => publication !== publicationList.children[index])) {
+            const focusedControl = publicationList.contains(document.activeElement) ? document.activeElement : null;
+            publicationList.replaceChildren(...orderedPublications);
+            focusedControl?.focus({ preventScroll: true });
         }
-    });
-
-    // ========== Scroll Reveal for Sections ==========
-    function revealEverything() {
-        document.querySelectorAll('.main-content section, .reveal-item').forEach(el => {
-            el.classList.add('revealed');
-        });
+        if (filterStatus) {
+            const label = researchTags.find(button => button.dataset.tag === tag)?.textContent;
+            filterStatus.textContent = tag
+                ? `${matchingPublications.length} of ${publications.length} publications match ${label}. Matching publications are shown first in their original order.`
+                : `All ${publications.length} publications shown in their original order.`;
+        }
     }
-
-    if (!('IntersectionObserver' in window)) {
-        revealEverything();
-        return;
-    }
-
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
-            if (entry.isIntersecting) {
-                entry.target.style.animationDelay = `${i * 0.05}s`;
-                entry.target.classList.add('revealed');
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.main-content section').forEach(section => {
-        revealObserver.observe(section);
+    researchTags.forEach(button => button.addEventListener('click', () => {
+        applyFilter(activeTag === button.dataset.tag ? null : button.dataset.tag);
+    }));
+    clearButtons.forEach(button => button.addEventListener('click', () => applyFilter(null)));
+    document.addEventListener('click', event => {
+        const button = event.target.closest('.pub-tag');
+        if (button) applyFilter(activeTag === button.dataset.tag ? null : button.dataset.tag);
     });
-
-    // ========== Per-item Reveal on Scroll ==========
-    const itemObserver = new IntersectionObserver((entries) => {
-        const visible = entries.filter(e => e.isIntersecting);
-        visible.forEach((entry, i) => {
-            entry.target.style.transitionDelay = `${i * 0.08}s`;
-            entry.target.classList.add('revealed');
-            itemObserver.unobserve(entry.target);
-        });
-    }, { threshold: 0.05 });
-
-    // Observe items after a short delay to let JS render them
-    setTimeout(() => {
-        document.querySelectorAll('.reveal-item').forEach(item => {
-            itemObserver.observe(item);
-        });
-    }, 50);
-
-    // Failsafe: if anything is still hidden after 2.5s (missed observer
-    // callback, slow render, in-app browser quirks), reveal it anyway.
-    setTimeout(revealEverything, 2500);
+    applyFilter(null);
 });

@@ -61,7 +61,7 @@ function renderEducation() {
             const advisorName = item.advisorUrl
                 ? `<a href="${item.advisorUrl}" target="_blank">${item.advisor}</a>`
                 : item.advisor;
-            advisorHtml = `<p>Advisor: ${advisorName}</p>`;
+            advisorHtml = ` | Advisor: ${advisorName}`;
         }
 
         const detailsHtml = item.details && item.details.length > 0
@@ -73,8 +73,7 @@ function renderEducation() {
                 <span class="timeline-date">${item.dates}</span>
                 <div class="timeline-content">
                     <h3>${institutionHtml}</h3>
-                    <p>${item.degree}</p>
-                    ${advisorHtml}
+                    <p>${item.degree}${advisorHtml}</p>
                     ${detailsHtml}
                 </div>
             </div>

@@ -1,166 +1,58 @@
-/**
- * Sidebar Configuration
- *
- * Edit the sidebarConfig object below to customize your profile.
- */
-
+/** Profile links and navigation. Edit this configuration to update the header. */
 const sidebarConfig = {
-    // Background image (set to null for solid color background)
-    // Example: "images/sidebar-bg.jpg" or "https://example.com/image.jpg"
-    backgroundImage: null,
-
-    // Background overlay opacity (0-1, higher = darker, helps text readability)
-    backgroundOverlay: 0.1,
-
-    // Profile
-    profile: {
-        photo: "images/anime_icon.png",  // Path to your photo, e.g., "images/photo.jpg" (null shows placeholder)
-        altPhoto: "images/anime_icon_2.png",  // Alternate photo shown on click
-        photoPlaceholder: "X",  // Letter shown when no photo
-        name: "Xirui Li",
-        title: "Ph.D. Student",
-        institution: "University of Maryland"
-    },
-
-    // Contact Information (leave empty array to hide)
-    contact: [],
-
-    // Social Links
+    profile: { name: "Xirui Li" },
     social: [
-        { icon: "fas fa-envelope", url: "mailto:xiruili@umd.edu", title: "Email" },
-        { icon: "ai ai-google-scholar", url: "https://scholar.google.com/citations?user=7hH0iM8AAAAJ&hl=en", title: "Google Scholar" },
-        { icon: "fab fa-github", url: "https://github.com/xirui-li", title: "GitHub" },
-        { icon: "fab fa-twitter", url: "https://twitter.com/xiruili7_li", title: "Twitter" },
-        { icon: "fab fa-linkedin-in", url: "https://www.linkedin.com/in/xirui-li7/", title: "LinkedIn" },
-        { icon: "fas fa-file-pdf", url: "files/Xirui_Li_CV_latest.pdf", title: "CV" }
+        { icon: "mail", url: "mailto:xiruili@umd.edu", title: "Email" },
+        { icon: "scholar", url: "https://scholar.google.com/citations?user=7hH0iM8AAAAJ&hl=en", title: "Google Scholar" },
+        { icon: "github", url: "https://github.com/xirui-li", title: "GitHub" },
+        { icon: "blog", url: "https://xirui-li.github.io/blog/", title: "Blog" },
+        { icon: "twitter", url: "https://twitter.com/xiruili7_li", title: "Twitter" },
+        { icon: "linkedin", url: "https://www.linkedin.com/in/xirui-li7/", title: "LinkedIn" },
+        { icon: "file", url: "files/Xirui_Li_CV_latest.pdf", title: "CV" }
     ],
-
-    // Navigation Links (each can have its own background image)
-    // Add backgroundImage to any nav item to change sidebar background when that section is active
     nav: [
-        { text: "News", href: "#news", backgroundImage: "images/bq-news.WEBP" },
-        { text: "Publications", href: "#publications", backgroundImage: "images/bq-publications.WEBP" },
-        { text: "Education", href: "#education", backgroundImage: "images/bq-education.WEBP" },
-        { text: "Experience", href: "#experience", backgroundImage: "images/bq-experience.WEBP" }
-    ],
-
-    // Default background (shown when no section is active, e.g., on About section)
-    defaultBackground: "images/bq-default.WEBP"
+        { text: "About", href: "#about" },
+        { text: "News", href: "#news" },
+        { text: "Publications", href: "#publications" },
+        { text: "Education", href: "#education" },
+        { text: "Experience", href: "#experience" },
+        { text: "Misc", href: "#misc" }
+    ]
 };
 
-// ========== Render Functions (Do not modify unless necessary) ==========
-
-function renderProfile(config) {
-    const { profile } = config;
-
-    const clickAttr = profile.altPhoto
-        ? ` onclick="toggleProfilePhoto()" style="cursor: pointer;" title="Click to switch!"`
-        : '';
-
-    const photoHtml = profile.photo
-        ? `<img src="${profile.photo}" alt="${profile.name}" class="profile-photo" id="profilePhoto"${clickAttr}>`
-        : `<div class="profile-photo-placeholder">${profile.photoPlaceholder}</div>`;
-
-    return `
-        <div class="profile">
-            ${photoHtml}
-            <h1>${profile.name}</h1>
-            ${profile.nameCn ? `<p class="name-cn">${profile.nameCn}</p>` : ''}
-            <p class="title">${profile.title}<br>${profile.institution}</p>
-        </div>
-    `;
-}
-
-function renderContact(contact) {
-    const items = contact.map(item => {
-        const textHtml = item.link
-            ? `<a href="${item.link}">${item.text}</a>`
-            : `<span>${item.text}</span>`;
-
-        return `
-            <div class="contact-item">
-                <i class="${item.icon}"></i>
-                ${textHtml}
-            </div>
-        `;
-    }).join('');
-
-    return `<div class="contact-info">${items}</div>`;
-}
-
-function renderSocial(social) {
-    const links = social.map(item => `
-        <a href="${item.url}" title="${item.title}"><i class="${item.icon}"></i></a>
-    `).join('');
-
-    return `<div class="social-links">${links}</div>`;
-}
-
-function renderNav(nav) {
-    const links = nav.map(item => `
-        <a href="${item.href}">${item.text}</a>
-    `).join('');
-
-    return `<nav class="sidebar-nav">${links}</nav>`;
-}
+// Outline icons use the same 24-unit grid and stroke as the Blog's profile links.
+const profileIcons = {
+    mail: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/>',
+    scholar: '<path d="m22 10-10-5-10 5 10 5 10-5ZM6 12v5c3 3 9 3 12 0v-5M22 10v6"/>',
+    github: '<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>',
+    blog: '<path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L9 17l-4 1 1-4Z"/>',
+    twitter: '<path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>',
+    linkedin: '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>',
+    file: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8ZM14 2v6h6M8 13h8M8 17h6"/>'
+};
 
 function renderSidebar() {
-    const container = document.getElementById('sidebar');
-    if (!container) return;
-
-    // Apply background image if configured
-    if (sidebarConfig.backgroundImage) {
-        container.classList.add('has-bg-image');
-        container.style.setProperty('--sidebar-bg-image', `url('${sidebarConfig.backgroundImage}')`);
-        container.style.setProperty('--sidebar-overlay-opacity', sidebarConfig.backgroundOverlay);
+    const header = document.getElementById('sidebar');
+    const profileLinks = document.getElementById('profileLinks');
+    if (header) {
+        header.innerHTML = `
+            <nav class="nav-wrap" aria-label="Main navigation">
+                <a class="wordmark" href="#about">${sidebarConfig.profile.name}</a>
+                <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">
+                    <span></span><span></span>
+                </button>
+                <div class="nav-links" id="nav-links">
+                    ${sidebarConfig.nav.map(item => `<a href="${item.href}" data-section-link>${item.text}</a>`).join('')}
+                    <a class="nav-cv" href="files/Xirui_Li_CV_latest.pdf">Curriculum vitae</a>
+                </div>
+            </nav>`;
     }
-
-    container.innerHTML = `
-        <button class="bg-toggle" id="bgToggle" title="Toggle background image">
-            <i class="fas fa-eye"></i>
-        </button>
-        ${renderProfile(sidebarConfig)}
-        ${renderContact(sidebarConfig.contact)}
-        ${renderSocial(sidebarConfig.social)}
-        ${renderNav(sidebarConfig.nav)}
-    `;
+    if (profileLinks) {
+        profileLinks.innerHTML = sidebarConfig.social.map(item => `
+            <a href="${item.url}" title="${item.title}" aria-label="${item.title}">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${profileIcons[item.icon]}</svg>
+            </a>`).join('');
+    }
 }
 
-let showingAltPhoto = false;
-
-function toggleProfilePhoto() {
-    const img = document.getElementById('profilePhoto');
-    if (!img || !sidebarConfig.profile.altPhoto) return;
-
-    showingAltPhoto = !showingAltPhoto;
-    img.src = showingAltPhoto
-        ? sidebarConfig.profile.altPhoto
-        : sidebarConfig.profile.photo;
-}
-
-// Preload sidebar images to avoid white flash on first switch
-function preloadSidebarImages() {
-    const urls = [];
-
-    // Nav background images
-    sidebarConfig.nav.forEach(item => {
-        if (item.backgroundImage) urls.push(item.backgroundImage);
-    });
-
-    // Default background
-    if (sidebarConfig.defaultBackground) urls.push(sidebarConfig.defaultBackground);
-
-    // Alt profile photo
-    if (sidebarConfig.profile.altPhoto) urls.push(sidebarConfig.profile.altPhoto);
-
-    urls.forEach(url => {
-        const img = new Image();
-        img.src = url;
-    });
-}
-
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    renderSidebar();
-    preloadSidebarImages();
-});
+document.addEventListener('DOMContentLoaded', renderSidebar);
