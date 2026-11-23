@@ -193,10 +193,11 @@ h3 { color: var(--ink); font-size: var(--type-body); line-height: var(--leading)
 .misc-item { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 16px; padding-block: 16px; border-bottom: 1px dashed var(--line); }
 .misc-item:first-child { padding-top: 4px; }
 .misc-item:last-child { border-bottom: 0; padding-bottom: 0; }
-.misc-icon { font-size: var(--type-body); color: var(--muted); padding-top: 6px; }
+.misc-icon { display: block; width: 22px; height: 22px; margin-top: 2px; color: var(--muted); }
 .misc-label { display: block; font: var(--weight-emphasis) var(--type-body)/1.5 var(--sans); color: var(--ink); margin-bottom: 4px; }
 .misc-desc { font-size: var(--type-body); line-height: var(--leading); color: var(--ink); }
 .friend-gate-btn { display: flex; width: fit-content; font-size: var(--type-meta); margin-top: 10px; }
+.friend-gate-icon { width: 16px; height: 16px; flex-shrink: 0; color: var(--muted); }
 footer { border-top: 2px solid var(--line); padding-block: 24px 32px; color: var(--muted); font-size: var(--type-meta); line-height: var(--leading); }
 .design-credit { margin-top: 5px; }
 .visitor-map { margin-top: 18px; opacity: .7; }
