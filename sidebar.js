@@ -43,7 +43,7 @@ function renderSidebar() {
                 </button>
                 <div class="nav-links" id="nav-links">
                     ${sidebarConfig.nav.map(item => `<a href="${item.href}" data-section-link>${item.text}</a>`).join('')}
-                    <a class="nav-cv" href="files/Xirui_Li_CV_latest.pdf">Curriculum vitae</a>
+                    <a class="nav-button" href="https://xirui-li.github.io/blog/">Blog</a>
                 </div>
             </nav>`;
     }

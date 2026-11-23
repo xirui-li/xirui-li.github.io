@@ -308,7 +308,7 @@ function renderTags(tags) {
 
 function renderPublication(pub) {
     const venueName = pub.venueShort
-        ? `${pub.venue} (<strong>${pub.venueShort}</strong>)`
+        ? `${pub.venue} (${pub.venueShort})`
         : pub.venue;
     const venueDisplay = pub.venueNote
         ? `${venueName}, ${pub.year} | ${pub.venueNote}`
