@@ -85,7 +85,7 @@ strong { font-weight: var(--weight-emphasis); }
 .profile-column { align-self: stretch; min-width: 0; }
 .main-content { min-width: 0; width: 100%; }
 .main-content > section, footer { width: 100%; margin-inline: 0; }
-.main-content > section { padding-block: 32px; border-top: 1px solid var(--line); scroll-margin-top: 0; }
+.main-content > section { padding-block: 32px; border-top: 1px dashed var(--line); scroll-margin-top: 0; }
 .main-content > section:first-child { padding-top: 0; border-top: 0; }
 .main-content h2 { margin-bottom: 16px; }
 h1, h2 { font-family: var(--serif); font-size: var(--type-heading); line-height: 1.4; letter-spacing: -.3px; color: var(--ink); font-weight: var(--weight-regular); text-wrap: balance; }
@@ -197,7 +197,7 @@ h3 { color: var(--ink); font-size: var(--type-body); line-height: var(--leading)
 .misc-label { display: block; font: var(--weight-emphasis) var(--type-body)/1.5 var(--sans); color: var(--ink); margin-bottom: 4px; }
 .misc-desc { font-size: var(--type-body); line-height: var(--leading); color: var(--ink); }
 .friend-gate-btn { display: flex; width: fit-content; font-size: var(--type-meta); margin-top: 10px; }
-footer { border-top: 1px solid var(--line); padding-block: 24px 32px; color: var(--muted); font-size: var(--type-meta); line-height: var(--leading); }
+footer { border-top: 1px dashed var(--line); padding-block: 24px 32px; color: var(--muted); font-size: var(--type-meta); line-height: var(--leading); }
 .design-credit { margin-top: 5px; }
 .visitor-map { margin-top: 18px; opacity: .7; }
 /* Lightweight placeholders are replaced synchronously by the content scripts. */
@@ -227,7 +227,7 @@ footer { border-top: 1px solid var(--line); padding-block: 24px 32px; color: var
 }
 @media (max-width: 1000px) {
     .wrapper { display: block; width: min(100% - 40px, 760px); padding-top: 0; }
-    .profile-column { border-bottom: 1px solid var(--line); }
+    .profile-column { border-bottom: 1px dashed var(--line); }
     .about { position: static; height: auto; overflow: visible; padding: 64px 0; }
     .about-content { max-width: 700px; }
     .main-content > section:first-child { padding-top: 32px; }
