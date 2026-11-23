@@ -11,7 +11,6 @@ const sidebarConfig = {
         { icon: "file", url: "files/Xirui_Li_CV_latest.pdf", title: "CV" }
     ],
     nav: [
-        { text: "About", href: "#about" },
         { text: "News", href: "#news" },
         { text: "Publications", href: "#publications" },
         { text: "Education", href: "#education" },
