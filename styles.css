@@ -137,7 +137,9 @@ h3 { color: var(--ink); font-size: var(--type-body); line-height: var(--leading)
 .section-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin-bottom: 16px; }
 .main-content .section-heading h2 { margin-bottom: 0; }
 .section-note { color: var(--muted); font-size: var(--type-meta); margin: 0 0 0 auto; text-align: right; }
-.inline-link-icon { width: 1em; height: 1em; margin-left: 4px; vertical-align: -.15em; }
+.section-note a { display: inline-flex; align-items: center; gap: 4px; line-height: 1.5; white-space: nowrap; text-decoration: none; border-bottom: 1px dashed var(--link-rule); }
+.section-note a:hover { border-bottom-color: var(--ink); }
+.inline-link-icon { width: 1em; height: 1em; flex-shrink: 0; }
 .publication {
     position: relative; isolation: isolate;
     padding-block: 18px; border-bottom: 1px dashed var(--line);
