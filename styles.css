@@ -134,8 +134,8 @@ h3 { color: var(--ink); font-size: var(--type-body); line-height: var(--leading)
 .research-tag:hover { color: var(--ink); }
 .research-tag.active { color: var(--ink); border-bottom-color: var(--ink); }
 .pub-filter { border-bottom: 1px dashed var(--line); margin-bottom: 12px; }
-.publication-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin-bottom: 16px; }
-.main-content .publication-heading h2 { margin-bottom: 0; }
+.section-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin-bottom: 16px; }
+.main-content .section-heading h2 { margin-bottom: 0; }
 .section-note { color: var(--muted); font-size: var(--type-meta); margin: 0 0 0 auto; text-align: right; }
 .publication {
     position: relative; isolation: isolate;
@@ -178,7 +178,7 @@ h3 { color: var(--ink); font-size: var(--type-body); line-height: var(--leading)
 .news-list.expanded .news-item { display: grid; }
 .news-date { color: var(--muted); font-size: var(--type-meta); white-space: nowrap; padding-top: 2px; font-variant-numeric: tabular-nums; }
 .news-logo { display: inline-block; width: auto; height: 17px; vertical-align: middle; margin-inline: 3px; }
-.news-toggle { align-items: center; gap: 10px; border: 0; border-bottom: 1px dashed var(--link-rule); padding: 0 0 3px; margin-top: 12px; color: var(--accent); font-size: var(--type-meta); line-height: var(--leading); }
+.news-toggle { align-items: center; gap: 10px; border: 0; border-bottom: 1px dashed var(--link-rule); padding: 0 0 3px; margin: 0 0 0 auto; color: var(--accent); font-size: var(--type-meta); line-height: var(--leading); }
 .toggle-icon { font-size: 10px; transition: transform .2s; }
 .news-toggle[aria-expanded='true'] .toggle-icon { transform: rotate(180deg); }
 .timeline-item { display: grid; grid-template-columns: 138px minmax(0, 1fr); gap: 18px; padding-block: 16px; border-bottom: 1px dashed var(--line); }
@@ -255,7 +255,7 @@ footer { border-top: 2px solid var(--line); padding-block: 24px 32px; color: var
         scroll-snap-type: y proximity;
         scroll-padding-top: calc(var(--nav-height) + 48px);
     }
-    .main-content > section > h2, .publication-heading {
+    .main-content > section > h2, .section-heading {
         scroll-snap-align: start;
         scroll-snap-stop: normal;
     }

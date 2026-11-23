@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="styles.css?v=eed2374e6e">
+    <link rel="stylesheet" href="styles.css?v=2c42084851">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -79,22 +79,24 @@
         <main id="main" class="main-content">
             <!-- News (rendered by news.js) -->
             <section id="news">
-                <h2>News</h2>
+                <div class="section-heading">
+                    <h2>News</h2>
+                    <button class="news-toggle" id="newsToggle" type="button" style="display: none;">
+                        <span class="toggle-text">Show more</span>
+                        <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
+                    </button>
+                </div>
                 <ul class="news-list" id="newsList">
                     <li class="skeleton-news"><div class="skeleton skeleton-news-date"></div><div class="skeleton skeleton-news-text"></div></li>
                     <li class="skeleton-news"><div class="skeleton skeleton-news-date"></div><div class="skeleton skeleton-news-text"></div></li>
                     <li class="skeleton-news"><div class="skeleton skeleton-news-date"></div><div class="skeleton skeleton-news-text"></div></li>
                     <li class="skeleton-news"><div class="skeleton skeleton-news-date"></div><div class="skeleton skeleton-news-text"></div></li>
                 </ul>
-                <button class="news-toggle" id="newsToggle" style="display: none;">
-                    <span class="toggle-text">Show more</span>
-                    <i class="fas fa-chevron-down toggle-icon"></i>
-                </button>
             </section>
 
             <!-- Publications -->
             <section id="publications">
-                <div class="publication-heading">
+                <div class="section-heading">
                     <h2>Publications</h2>
                     <p class="section-note">
                         (* indicates equal contribution) | <a href="https://scholar.google.com/citations?user=7hH0iM8AAAAJ&hl=en" target="_blank">Google Scholar</a>
