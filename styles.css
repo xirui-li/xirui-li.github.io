@@ -112,7 +112,6 @@ h3 { color: var(--ink); font-size: var(--type-body); line-height: var(--leading)
 .about-text { font-size: var(--type-body); line-height: var(--leading); text-align: center; }
 .about-text p + p { margin-top: 16px; }
 .about-research { margin-top: 28px; scroll-margin-top: calc(var(--nav-height) + 24px); text-align: left; }
-.about-research h2 { margin-bottom: 12px; }
 .research-list { list-style: decimal outside; margin: 8px 0 0; padding-inline-start: 1.5rem; }
 .research-list li + li { margin-top: 6px; }
 .social-icons { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 22px; }
